@@ -5,6 +5,10 @@ import { tap, map, catchError } from 'rxjs/operators';
 import { Charsheet } from './charsheet';
 // import { MessageService } from './message.service';
 
+// import * as jsonld from 'jsonld';
+// var jsonldp = jsonld.promises ;
+
+
 @Injectable({
   providedIn: 'root'
 })
