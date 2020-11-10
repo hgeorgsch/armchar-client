@@ -10,7 +10,7 @@ import { Charsheet } from './charsheet';
 })
 export class ArmcharService {
 
-  charsheetURI = 'http://localhost:8080/armchar/character/' ;
+  charsheetURI = 'http://localhost:8080/armchar/Character/' ;
 
   constructor(
     private http: HttpClient
