@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArmcharService } from '../armchar.service';
 
-import * as jsonld from 'jsonld';
+// import * as jsonld from 'jsonld';
 
 @Component({
   selector: 'app-charsheet',
@@ -20,7 +20,6 @@ export class CharsheetComponent implements OnInit {
   ngOnInit(): void {
      this.subs = this.armcharService.getCharsheet( this.char, this.time )
 	 .subscribe( cs => this.charsheet = cs ) 
-         // .subscribe( cs => this.charsheet = jsonld.compact( cs ) ) 
   } ;
 
 

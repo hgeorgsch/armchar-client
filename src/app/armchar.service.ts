@@ -23,7 +23,25 @@ export class ArmcharService {
 
   getCharsheet(id: string, t:string): Observable<Charsheet> {
      const url = `${this.charsheetURI}${id}/${t}`;
-     return this.http.get<Charsheet>(url) ;
+     const cid = `armchar:${id}#${t}`;
+     return this.http.get<Charsheet>(url).pipe( map( j => this.process(j,cid) ) ) ;
+  }
+  process(j:any,cid:string): any {
+	console.log( cid ) ;
+	var g = j["@graph"] ;
+        var r = {} ;
+	g.forEach( (el) => { r[el["@id"]] = el } ) ;
+	var rr = r[cid] ;
+	for ( let key in rr ) {
+	  if ( rr[key] instanceof Array ) {
+	     rr[key] = rr[key].map( k => r[k["@id"]] ) ;
+	  }
+	  if ( rr[key] instanceof Object && '@id' in rr[key] ) {
+	     rr[key] = [  r[rr[key]["@id"]] ] ;
+	  }
+	}
+	console.log( rr ) ;
+	return rr ;
   }
 
   private log(message: string) {
