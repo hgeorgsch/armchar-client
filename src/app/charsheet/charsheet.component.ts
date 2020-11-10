@@ -19,7 +19,8 @@ export class CharsheetComponent implements OnInit {
 
   ngOnInit(): void {
      this.subs = this.armcharService.getCharsheet( this.char, this.time )
-	 .subscribe( cs => this.charsheet = jsonld.expand( cs => jsonld.frame(cs),this.frame) ) 
+	 .subscribe( cs => this.charsheet = cs ) 
+         // .subscribe( cs => this.charsheet = jsonld.compact( cs ) ) 
   } ;
 
 
