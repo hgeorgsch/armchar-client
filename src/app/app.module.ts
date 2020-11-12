@@ -10,6 +10,7 @@ import { CharsheetComponent } from './charsheet/charsheet.component';
 import { RouterModule } from '@angular/router';
 import { MessagesComponent } from './messages/messages.component';
 import { CharheadComponent } from './charsheet/charhead.component';
+import { AbilitiesComponent } from './charsheet/abilities.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CharheadComponent } from './charsheet/charhead.component';
     FooterComponent,
     CharsheetComponent,
     MessagesComponent,
-    CharheadComponent
+    CharheadComponent,
+    AbilitiesComponent
   ],
   imports: [
     BrowserModule,
