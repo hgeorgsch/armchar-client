@@ -9,13 +9,15 @@ import { CharsheetComponent } from './charsheet/charsheet.component';
 
 import { RouterModule } from '@angular/router';
 import { MessagesComponent } from './messages/messages.component';
+import { CharheadComponent } from './charsheet/charhead.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     CharsheetComponent,
-    MessagesComponent
+    MessagesComponent,
+    CharheadComponent
   ],
   imports: [
     BrowserModule,

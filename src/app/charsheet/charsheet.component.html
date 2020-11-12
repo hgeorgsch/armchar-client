@@ -1,5 +1,8 @@
 <h2>Character Sheet for {{char}} {{time}}</h2>
 
-{{char}} - {{time}}
+<app-charhead [charsheet]="this.charsheet"></app-charhead>
+
+<hr>
 
 {{charsheet | json }}
+

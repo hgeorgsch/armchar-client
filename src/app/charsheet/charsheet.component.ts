@@ -12,7 +12,7 @@ export class CharsheetComponent implements OnInit {
 
   char = "cieran" ;
   time = "winter1224" ;
-  charsheet: any ;
+  charsheet: any | undefined ;
   subs: any ;
 
   constructor( private armcharService: ArmcharService ) { }
@@ -20,7 +20,13 @@ export class CharsheetComponent implements OnInit {
   ngOnInit(): void {
      this.subs = this.armcharService.getCharsheet( this.char, this.time )
 	 .subscribe( cs => this.charsheet = cs ) 
-  } ;
+  }
 
+  get(k): string {
+    if ( this.charsheet === undefined ) return "" ;
+    if ( "arm:" + k in this.charsheet ) 
+       return this.charsheet["arm:"+k] ;
+    return "" ;
+  } 
 
 }
