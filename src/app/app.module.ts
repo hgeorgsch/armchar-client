@@ -11,6 +11,9 @@ import { RouterModule } from '@angular/router';
 import { MessagesComponent } from './messages/messages.component';
 import { CharheadComponent } from './charsheet/charhead.component';
 import { AbilitiesComponent } from './charsheet/abilities.component';
+import { AbilityComponent } from './charsheet/ability.component';
+import { CharacteristicsComponent } from './charsheet/characteristics.component';
+import { CharacteristicComponent } from './charsheet/characteristic.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { AbilitiesComponent } from './charsheet/abilities.component';
     CharsheetComponent,
     MessagesComponent,
     CharheadComponent,
-    AbilitiesComponent
+    AbilitiesComponent,
+    AbilityComponent,
+    CharacteristicsComponent,
+    CharacteristicComponent
   ],
   imports: [
     BrowserModule,
