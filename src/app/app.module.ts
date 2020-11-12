@@ -31,10 +31,10 @@ import { CharacteristicComponent } from './charsheet/characteristic.component';
     BrowserModule,
     HttpClientModule,
     // AppRoutingModule,
-    RouterModule.forRoot([
-    {path: 'charsheet', component: CharsheetComponent},
-    // {path: 'heroes-list', component: HeroesListComponent},
-  ]),
+    // AppRoutingModule,
+RouterModule.forRoot([
+    { path: 'charsheet', component: CharsheetComponent },
+], { relativeLinkResolution: 'legacy' }),
   ],
 
   providers: [],
