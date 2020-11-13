@@ -11,15 +11,6 @@ import { FooterComponent } from './footer.component';
 import { RouterModule } from '@angular/router';
 import { MessagesComponent } from './messages/messages.component';
 
-import { CharsheetComponent } from './charsheet/charsheet.component';
-import { CharheadComponent } from './charsheet/charhead.component';
-import { AbilitiesComponent } from './charsheet/abilities.component';
-import { CharacteristicsComponent } from './charsheet/characteristics.component';
-import { PtraitComponent } from './charsheet/ptrait.component';
-import { ReputationComponent } from './charsheet/reputation.component';
-
-import {PanelModule} from 'primeng/panel';
-import {TableModule} from 'primeng/table';
 
 
 @NgModule({
@@ -27,23 +18,22 @@ import {TableModule} from 'primeng/table';
     AppComponent,
     FooterComponent,
     MessagesComponent,
-    CharsheetComponent,
-    CharheadComponent,
-    AbilitiesComponent,
-    CharacteristicsComponent,
-    PtraitComponent,
-    ReputationComponent,
+    // CharsheetComponent,
+    // CharheadComponent,
+    // AbilitiesComponent,
+    // CharacteristicsComponent,
+    // PtraitComponent,
+    // ReputationComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    PanelModule,
-    TableModule,
     NoopAnimationsModule,
     // AppRoutingModule,
-RouterModule.forRoot([
-    { path: '', component: CharsheetComponent },
-    { path: 'charsheet', component: CharsheetComponent },
+    RouterModule.forRoot([
+    { path: '', redirectTo: 'charsheet', pathMatch: 'full'  },
+    { path: 'charsheet', loadChildren: 
+      () => import('./charsheet/charsheet.module').then( m => m.CharsheetModule ) }
 ], { relativeLinkResolution: 'legacy' }),
   ],
 
