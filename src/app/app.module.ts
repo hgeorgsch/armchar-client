@@ -12,9 +12,7 @@ import { RouterModule } from '@angular/router';
 import { MessagesComponent } from './messages/messages.component';
 import { CharheadComponent } from './charsheet/charhead.component';
 import { AbilitiesComponent } from './charsheet/abilities.component';
-// import { AbilityComponent } from './charsheet/ability.component';
 import { CharacteristicsComponent } from './charsheet/characteristics.component';
-// import { CharacteristicComponent } from './charsheet/characteristic.component';
 
 import {PanelModule} from 'primeng/panel';
 import {TableModule} from 'primeng/table';
@@ -32,11 +30,9 @@ import { ReputationComponent } from './charsheet/reputation.component';
     MessagesComponent,
     CharheadComponent,
     AbilitiesComponent,
-    // AbilityComponent,
     CharacteristicsComponent,
     PtraitComponent,
     ReputationComponent,
-    // CharacteristicComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +40,6 @@ import { ReputationComponent } from './charsheet/reputation.component';
     PanelModule,
     TableModule,
     NoopAnimationsModule,
-    // AppRoutingModule,
     // AppRoutingModule,
 RouterModule.forRoot([
     { path: '', component: CharsheetComponent },
