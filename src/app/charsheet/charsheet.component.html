@@ -1,10 +1,18 @@
 <h2>Character Sheet for {{char}} {{time}}</h2>
 
-<app-charhead [charsheet]="this.charsheet"></app-charhead>
-
-
-<app-characteristics [charlist]="get('charlist')"></app-characteristics>
-<app-abilities [ablist]="get('hasAbility')"></app-abilities>
+<div class="p-grid">
+  <div class="p-col">
+    <app-charhead [charsheet]="this.charsheet"></app-charhead>
+    <p-panel header="Characteristics" [toggleable]="true" class="dark-panel">
+      <app-characteristics [charlist]="get('charlist')"></app-characteristics>
+    </p-panel>
+  </div>
+  <div class="p-col">
+    <p-panel header="Abilities" [toggleable]="true" class="dark-panel">
+      <app-abilities [ablist]="get('hasAbility')"></app-abilities>
+    </p-panel>
+  </div>
+</div>
 
 <hr>
 

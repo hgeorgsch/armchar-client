@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-
 @Component({
   selector: 'app-charhead',
   templateUrl: './charhead.component.html',
@@ -15,9 +14,7 @@ export class CharheadComponent implements OnInit {
   }
   get(k): string {
     if ( this.charsheet === undefined ) return "" ;
-    if ( "arm:" + k in this.charsheet ) 
-       return this.charsheet["arm:"+k] ;
-    return "" ;
+    return this.charsheet.get(k) ;
   } 
 
 }
