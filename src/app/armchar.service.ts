@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap, map, catchError } from 'rxjs/operators';
-import { Charsheet } from './charsheet';
+import { Charsheet, charsheetParse } from './charsheet';
 // import { MessageService } from './message.service';
 
 // import * as jsonld from 'jsonld';

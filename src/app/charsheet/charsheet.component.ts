@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArmcharService } from '../armchar.service';
+import { Charsheet } from '../charsheet';
 
 // import * as jsonld from 'jsonld';
 
@@ -12,7 +13,7 @@ export class CharsheetComponent implements OnInit {
 
   char = "cieran" ;
   time = "winter1224" ;
-  charsheet: any | undefined ;
+  charsheet: Charsheet | undefined ;
   subs: any ;
 
   constructor( private armcharService: ArmcharService ) { }
@@ -24,9 +25,7 @@ export class CharsheetComponent implements OnInit {
 
   get(k): string {
     if ( this.charsheet === undefined ) return "" ;
-    if ( "arm:" + k in this.charsheet ) 
-       return this.charsheet["arm:"+k] ;
-    return "" ;
+    return this.charsheet.get(k) ;
   } 
 
 }
