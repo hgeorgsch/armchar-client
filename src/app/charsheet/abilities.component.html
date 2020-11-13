@@ -1,4 +1,19 @@
-<div *ngFor="let ab of ablist">
-   <app-ability [ab]="ab">
-   </app-ability>
-</div>
+<p-table [value]="ablist.ablist">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Ability</th>
+            <th>Specality</th>
+            <th>Score</th>
+            <th>XP</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-ab>
+        <tr>
+            <td>{{ab.label}}</td>
+            <td>[{{ab.spec}}]</td>
+            <td>{{ab.score}}</td>
+            <td>{{ab.xp}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+

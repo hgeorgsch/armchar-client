@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AbilityList } from '../ability';
 
 @Component({
   selector: 'app-abilities',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AbilitiesComponent implements OnInit {
 
-  @Input() ablist: any[] ;
+  @Input() ablist: AbilityList ;
 
   constructor() { }
 

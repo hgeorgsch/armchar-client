@@ -1,0 +1,15 @@
+<p-table [value]="ptrait">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Personality Trait</th>
+            <th>Score</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-trait>
+        <tr>
+            <td>{{trait["rdfs:label"]}}</td>
+            <td>{{trait["arm:hasScore"]}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
