@@ -5,12 +5,10 @@ export class AbilityList {
    ablist : Ability[] ;
 
    constructor ( r: Ability[] ) {
-   /*
-       r.sort( (x,y) => { if ( x.order < y.order ) return -1 ; 
-          if ( x.order > y.order ) return 1 ; 
+       r.sort( (x,y) => { if ( x.label < y.label ) return -1 ; 
+          if ( x.label > y.label ) return 1 ; 
 	  return 0 ; }
        ) ;
-       */
        this.ablist = r ;
    }
    
