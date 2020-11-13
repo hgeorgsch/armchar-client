@@ -6,28 +6,28 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations' ;
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer.component';
-import { CharsheetComponent } from './charsheet/charsheet.component';
+
 
 import { RouterModule } from '@angular/router';
 import { MessagesComponent } from './messages/messages.component';
+
+import { CharsheetComponent } from './charsheet/charsheet.component';
 import { CharheadComponent } from './charsheet/charhead.component';
 import { AbilitiesComponent } from './charsheet/abilities.component';
 import { CharacteristicsComponent } from './charsheet/characteristics.component';
-
-import {PanelModule} from 'primeng/panel';
-import {TableModule} from 'primeng/table';
 import { PtraitComponent } from './charsheet/ptrait.component';
 import { ReputationComponent } from './charsheet/reputation.component';
 
-
+import {PanelModule} from 'primeng/panel';
+import {TableModule} from 'primeng/table';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    CharsheetComponent,
     MessagesComponent,
+    CharsheetComponent,
     CharheadComponent,
     AbilitiesComponent,
     CharacteristicsComponent,
