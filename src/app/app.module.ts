@@ -14,9 +14,11 @@ import { CharheadComponent } from './charsheet/charhead.component';
 import { AbilitiesComponent } from './charsheet/abilities.component';
 import { AbilityComponent } from './charsheet/ability.component';
 import { CharacteristicsComponent } from './charsheet/characteristics.component';
-import { CharacteristicComponent } from './charsheet/characteristic.component';
+// import { CharacteristicComponent } from './charsheet/characteristic.component';
 
 import {PanelModule} from 'primeng/panel';
+import {TableModule} from 'primeng/table';
+
 
 
 
@@ -30,12 +32,13 @@ import {PanelModule} from 'primeng/panel';
     AbilitiesComponent,
     AbilityComponent,
     CharacteristicsComponent,
-    CharacteristicComponent
+    // CharacteristicComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     PanelModule,
+    TableModule,
     NoopAnimationsModule,
     // AppRoutingModule,
     // AppRoutingModule,
