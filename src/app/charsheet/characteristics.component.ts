@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CharacteristicList } from '../characteristic';
 
 @Component({
   selector: 'app-characteristics',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CharacteristicsComponent implements OnInit {
 
-  @Input() charlist: any[] ;
+  @Input() charlist: CharacteristicList ;
 
   constructor() { }
 
