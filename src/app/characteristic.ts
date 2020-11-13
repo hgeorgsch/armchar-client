@@ -5,8 +5,8 @@ export class CharacteristicList {
    charlist : Characteristic[] ;
 
    constructor ( r: Characteristic[] ) {
-       r.sort( (x,y) => { if ( x.order < y.order ) return 1 ; 
-          if ( x.order > y.order ) return -1 ; 
+       r.sort( (x,y) => { if ( x.order < y.order ) return -1 ; 
+          if ( x.order > y.order ) return 1 ; 
 	  return 0 ; }
        ) ;
        this.charlist = r ;

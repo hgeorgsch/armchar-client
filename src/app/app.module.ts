@@ -33,6 +33,7 @@ import { CharacteristicComponent } from './charsheet/characteristic.component';
     // AppRoutingModule,
     // AppRoutingModule,
 RouterModule.forRoot([
+    { path: '', component: CharsheetComponent },
     { path: 'charsheet', component: CharsheetComponent },
 ], { relativeLinkResolution: 'legacy' }),
   ],
