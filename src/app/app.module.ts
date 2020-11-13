@@ -19,6 +19,7 @@ import { CharacteristicsComponent } from './charsheet/characteristics.component'
 import {PanelModule} from 'primeng/panel';
 import {TableModule} from 'primeng/table';
 import { PtraitComponent } from './charsheet/ptrait.component';
+import { ReputationComponent } from './charsheet/reputation.component';
 
 
 
@@ -34,6 +35,7 @@ import { PtraitComponent } from './charsheet/ptrait.component';
     // AbilityComponent,
     CharacteristicsComponent,
     PtraitComponent,
+    ReputationComponent,
     // CharacteristicComponent
   ],
   imports: [

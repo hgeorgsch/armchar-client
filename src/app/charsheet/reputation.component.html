@@ -1,15 +1,21 @@
-<p-table [value]="ptrait">
+<p-table [value]="reputation">
+  <div *ngIf="reputation">
     <ng-template pTemplate="header" [autoLayout]="true">
         <tr>
-            <th>Personality Trait</th>
+            <th>Reputation</th>
+            <th>Type</th>
             <th>Score</th>
+            <th>XP</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-trait>
         <tr>
             <td>{{trait["rdfs:label"]}}</td>
+            <td>{{trait["arm:hasTypeLabel"]}}</td>
             <td>{{trait["arm:hasScore"]}}</td>
+            <td>{{trait["arm:hasXP"]}}</td>
         </tr>
     </ng-template>
+  </div>
 </p-table>
 

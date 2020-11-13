@@ -15,6 +15,11 @@
         <app-ptrait [ptrait]="get('hasPersonalityTrait')"></app-ptrait>
       </p-panel>
     </div>
+    <div class="p-col-12">
+      <p-panel header="Reputations" [toggleable]="true" class="dark-panel">
+        <app-reputation [reputation]="get('hasReputation')"></app-reputation>
+      </p-panel>
+    </div>
   </div>
   <div class="p-col">
     <p-panel header="Abilities" [toggleable]="true" class="dark-panel">
