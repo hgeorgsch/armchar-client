@@ -2,18 +2,30 @@
 
 <div class="p-grid">
   <div class="p-col">
-    <div class="p-col-12">
-       <app-charhead [charsheet]="this.charsheet"></app-charhead>
-    </div>
-    <div class="p-col-12">
-      <p-panel header="Characteristics" [toggleable]="true" class="dark-panel">
+    <div class="p-grid">
+      <div class="p-col-12">
+         <app-charhead [charsheet]="this.charsheet"></app-charhead>
+      </div>
+      <div class="p-col-12">
+        <p-panel header="Characteristics" [toggleable]="true" class="dark-panel">
         <app-characteristics [charlist]="get('charlist')"></app-characteristics>
-      </p-panel>
-    </div>
-    <div class="p-col-12">
-      <p-panel header="Personality Traits" [toggleable]="true" class="dark-panel">
-        <app-ptrait [ptrait]="get('hasPersonalityTrait')"></app-ptrait>
-      </p-panel>
+        </p-panel>
+      </div>
+      <div class="p-col-6">
+        <p-panel header="Virtues" [toggleable]="true" class="dark-panel">
+          <app-vf [type]="'Virtue'" [vf]="get('hasVirtue')"></app-vf>
+        </p-panel>
+      </div>
+      <div class="p-col-6">
+        <p-panel header="Flaws" [toggleable]="true" class="dark-panel">
+          <app-vf [type]="'Flaw'" [vf]="get('hasFlaw')"></app-vf>
+        </p-panel>
+      </div>
+      <div class="p-col-12">
+        <p-panel header="Personality Traits" [toggleable]="true" class="dark-panel">
+          <app-ptrait [ptrait]="get('hasPersonalityTrait')"></app-ptrait>
+        </p-panel>
+      </div>
     </div>
     <div class="p-col-12">
       <p-panel header="Reputations" [toggleable]="true" class="dark-panel">
@@ -28,9 +40,9 @@
   </div>
 </div>
 
+<!--
 <hr>
 
 {{charsheet | json }}
-<!--
 -->
 

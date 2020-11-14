@@ -12,6 +12,7 @@ import { ReputationComponent } from './reputation.component';
 
 import {PanelModule} from 'primeng/panel';
 import {TableModule} from 'primeng/table';
+import { VfComponent } from './vf.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {TableModule} from 'primeng/table';
     CharacteristicsComponent,
     PtraitComponent,
     ReputationComponent,
+    VfComponent,
   ],
   imports: [
     CommonModule,
