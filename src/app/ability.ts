@@ -1,20 +1,22 @@
-
+import { Trait, TraitList } from './trait' ;
 
 export class AbilityList {
 
-   ablist : Ability[] ;
+   private ablist : Ability[] ;
 
    constructor ( r: Ability[] ) {
-       r.sort( (x,y) => { if ( x.label < y.label ) return -1 ; 
+       this.ablist = r ;
+       this.ablist.sort( (x,y) => { if ( x.label < y.label ) return -1 ; 
           if ( x.label > y.label ) return 1 ; 
 	  return 0 ; }
        ) ;
-       this.ablist = r ;
    }
+
+   get() : Ability[] { return this.ablist ; }
    
 }
 
-export class Ability {
+export class Ability extends Trait {
 
     order: number ;
     label: string ;

@@ -6,6 +6,18 @@
       <div class="p-col-12">
          <app-charhead [charsheet]="this.charsheet"></app-charhead>
       </div>
+      <div class="p-col-6">
+	 <app-effect-trait [trait]="charsheet.othertraits['Decrepitude']">
+	 </app-effect-trait>
+      </div>
+      <div class="p-col-6">
+	 <app-effect-trait [trait]="charsheet.othertraits['Warping']">
+	 </app-effect-trait>
+      </div>
+      <div class="p-col-6">
+	 <app-score [trait]="charsheet.othertraits['Confidence']">
+	 </app-score>
+      </div>
       <div class="p-col-12">
         <p-panel header="Characteristics" [toggleable]="true" class="dark-panel">
         <app-characteristics [charlist]="get('charlist')"></app-characteristics>
