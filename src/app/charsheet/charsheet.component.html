@@ -6,15 +6,15 @@
 <div class="p-grid">
   <div class="p-col">
     <div class="p-grid">
-      <div class="p-col-6">
+      <div *ngIf="charsheet" class="p-col-6">
 	 <app-effect-trait [trait]="charsheet.othertraits['Decrepitude']">
 	 </app-effect-trait>
       </div>
-      <div class="p-col-6">
+      <div *ngIf="charsheet" class="p-col-6">
 	 <app-effect-trait [trait]="charsheet.othertraits['Warping']">
 	 </app-effect-trait>
       </div>
-      <div class="p-col-6">
+      <div *ngIf="charsheet" class="p-col-6">
 	 <app-score [trait]="charsheet.othertraits['Confidence']">
 	 </app-score>
       </div>
