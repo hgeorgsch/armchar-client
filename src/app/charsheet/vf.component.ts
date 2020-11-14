@@ -14,4 +14,11 @@ export class VfComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getScore(t) : number {
+     if ( "arm:hasScore" in t ) t = t["arm:hasScore"] ;
+     if ( typeof(t) === "number" ) return t ;
+     if ( "@value" in t ) t = t["@value"] ;
+     return t ;
+  }
+
 }
