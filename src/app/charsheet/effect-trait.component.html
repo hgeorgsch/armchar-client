@@ -1,5 +1,7 @@
+<div *ngIf="trait">
 <p-panel header="{{trait.label}}" [toggleable]="true" class="dark-panel">
    <strong>Score:</strong> {{trait.score}}
    <strong>Points:</strong> {{trait.xp}}
    <p *ngIf="effects">{{effects}}</p> 
 </p-panel>
+</div>
