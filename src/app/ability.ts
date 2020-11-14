@@ -26,7 +26,7 @@ export class Ability {
 function parseAbility( ob ) : Ability {
    return { order: ob["arm:hasOrder"] || 0,
             label: ob["rdfs:label"],
-            spec: ob["arm:hasSpecialisation"] || "",
+            spec: ob["arm:hasSpeciality"] || "",
             score: ob["arm:hasScore"] || 0,
             xp: ob["arm:hasXP"] || 0
    } as Ability ;
