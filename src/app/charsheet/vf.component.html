@@ -6,9 +6,9 @@
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-trait>
-        <tr>
-            <td>{{vf["rdfs:label"]}}</td>
-            <td>{{vf["arm:hasScore"]}}</td>
+        <tr *ngIf="trait">
+            <td>{{trait["rdfs:label"] || "undefined"}}</td>
+            <td>{{trait["arm:hasScore"] || "??"}}</td>
         </tr>
     </ng-template>
 </p-table>
