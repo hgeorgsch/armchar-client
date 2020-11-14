@@ -1,11 +1,11 @@
-<h2>Character Sheet for {{char}} {{time}}</h2>
 
+<app-charhead [charsheet]="this.charsheet"></app-charhead>
+
+<p-tabView>
+    <p-tabPanel header="Main">
 <div class="p-grid">
   <div class="p-col">
     <div class="p-grid">
-      <div class="p-col-12">
-         <app-charhead [charsheet]="this.charsheet"></app-charhead>
-      </div>
       <div class="p-col-6">
 	 <app-effect-trait [trait]="charsheet.othertraits['Decrepitude']">
 	 </app-effect-trait>
@@ -52,9 +52,12 @@
   </div>
 </div>
 
-<hr>
-
-{{charsheet | json }}
-<!--
--->
+    </p-tabPanel>
+    <p-tabPanel header="Magic">
+       <app-arts [ablist]="get('arts')"></app-arts>
+    </p-tabPanel>
+    <p-tabPanel header="Combat">
+        Content 3
+    </p-tabPanel>
+</p-tabView>
 

@@ -12,9 +12,13 @@ import { ReputationComponent } from './reputation.component';
 
 import {PanelModule} from 'primeng/panel';
 import {TableModule} from 'primeng/table';
+import {TabViewModule} from 'primeng/tabview';
+
 import { VfComponent } from './vf.component';
 import { EffectTraitComponent } from './effect-trait.component';
 import { ScoreComponent } from './score.component';
+import { ArtsComponent } from './arts.component';
+import { ArtComponent } from './art.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +31,15 @@ import { ScoreComponent } from './score.component';
     VfComponent,
     EffectTraitComponent,
     ScoreComponent,
+    ArtsComponent,
+    ArtComponent,
   ],
   imports: [
     CommonModule,
     CharsheetRoutingModule,
     PanelModule,
     TableModule,
+    TabViewModule,
   ]
 })
 export class CharsheetModule { }
