@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnChanges, OnInit, Input } from '@angular/core';
+import { Trait } from '../trait';
 
 @Component({
   selector: 'app-effect-trait',
@@ -7,11 +8,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EffectTraitComponent implements OnInit {
 
-  @Input() trait : any ;
+  @Input() trait : Trait ;
+
+  effects : string | undefined ;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges(): void {
+    console.log( this.trait ) ;
+    if ( this.trait ) this.effects = this.trait.getEffect() ;
   }
 
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { ArmcharService } from '../armchar.service';
 import { Charsheet, charsheetParse } from '../charsheet';
+import { Trait } from '../trait';
 
 // import * as jsonld from 'jsonld';
 
@@ -27,5 +28,6 @@ export class CharsheetComponent implements OnInit {
     if ( this.charsheet === undefined ) return "" ;
     return this.charsheet.get(k) ;
   } 
+
 
 }
