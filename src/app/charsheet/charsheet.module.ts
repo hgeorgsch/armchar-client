@@ -13,6 +13,8 @@ import { ReputationComponent } from './reputation.component';
 import {PanelModule} from 'primeng/panel';
 import {TableModule} from 'primeng/table';
 import {TabViewModule} from 'primeng/tabview';
+import {CardModule} from 'primeng/card';
+
 
 import { VfComponent } from './vf.component';
 import { EffectTraitComponent } from './effect-trait.component';
@@ -42,6 +44,7 @@ import { SpellsComponent } from './spells.component';
     PanelModule,
     TableModule,
     TabViewModule,
+    CardModule,
   ]
 })
 export class CharsheetModule { }
