@@ -9,6 +9,7 @@ import { MagicPageComponent } from './magic-page.component';
 import { ArtsComponent } from './arts.component';
 import { ArtComponent } from './art.component';
 import { SpellsComponent } from './spells.component';
+import { DescriptionComponent } from './description.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { SpellsComponent } from './spells.component';
     ArtsComponent,
     ArtComponent,
     SpellsComponent,
+    DescriptionComponent,
     ],
   imports: [
     CommonModule,
