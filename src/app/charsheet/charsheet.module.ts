@@ -19,6 +19,7 @@ import { EffectTraitComponent } from './effect-trait.component';
 import { ScoreComponent } from './score.component';
 import { ArtsComponent } from './arts.component';
 import { ArtComponent } from './art.component';
+import { SpellsComponent } from './spells.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ArtComponent } from './art.component';
     ScoreComponent,
     ArtsComponent,
     ArtComponent,
+    SpellsComponent,
   ],
   imports: [
     CommonModule,

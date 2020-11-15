@@ -1,0 +1,15 @@
+<p-table *ngIf="spells" [value]="spells" [autoLayout]="true">
+   <ng-template pTemplate="header">
+        <tr>
+            <th>Art</th>
+            <th>Spell</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-spell>
+        <tr>
+            <td>{{spell.getSignature()}}</td>
+            <td>{{spell.spellName}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
