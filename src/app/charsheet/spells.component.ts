@@ -11,10 +11,16 @@ export class SpellsComponent implements OnInit {
   @Input() spells : Spell[] ;
 
   spelldetails: boolean = false ;
+  spell: Spell ;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelect( spell: Spell ) : void {
+     this.spell = spell ;
+     this.spelldetails = true ;
   }
 
 }

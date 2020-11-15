@@ -1,0 +1,16 @@
+
+tr.spellrow .clickable.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+tr.spellrow .clickable.selected:hover {
+  background-color: #BBD8DC;
+  color: white;
+}
+
+tr.spellrow .clickable:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+  cursor: pointer;
+}

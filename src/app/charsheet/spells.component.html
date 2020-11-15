@@ -19,20 +19,20 @@
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-spell>
-        <tr>
+        <tr class="spellrow">
             <td>{{spell.technique.substring(0,2)}}</td>
             <td>{{spell.form.substring(0,2)}}</td>
             <td>{{spell.level}}</td>
-            <td>{{spell.spellName}}</td>
+	    <td class="clickable" (click)="onSelect(spell)">{{spell.spellName}}</td>
             <td>{{spell.range}}</td>
             <td>{{spell.duration}}</td>
             <td>{{spell.target}}</td>
         </tr>
     </ng-template>
+</p-table>
 
-    <p-sidebar [(visible)]="spelldetails">
+    <p-sidebar [(visible)]="spelldetails" position="right">
         Content
     </p-sidebar>
 
-</p-table>
 
