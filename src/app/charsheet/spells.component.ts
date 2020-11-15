@@ -10,6 +10,8 @@ export class SpellsComponent implements OnInit {
 
   @Input() spells : Spell[] ;
 
+  spelldetails: boolean = false ;
+
   constructor() { }
 
   ngOnInit(): void {

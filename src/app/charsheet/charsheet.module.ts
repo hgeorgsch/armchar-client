@@ -14,6 +14,7 @@ import {PanelModule} from 'primeng/panel';
 import {TableModule} from 'primeng/table';
 import {TabViewModule} from 'primeng/tabview';
 import {CardModule} from 'primeng/card';
+import {SidebarModule} from 'primeng/sidebar';
 
 
 import { VfComponent } from './vf.component';
@@ -45,6 +46,7 @@ import { SpellsComponent } from './spells.component';
     TableModule,
     TabViewModule,
     CardModule,
+    SidebarModule,
   ]
 })
 export class CharsheetModule { }
