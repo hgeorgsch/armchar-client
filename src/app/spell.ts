@@ -25,6 +25,10 @@ export class Spell {
       return this.technique.substring(0,2) 
            + this.form.substring(0,2) + this.level ;
     }
+    get(k) : string {
+      if ( k in this ) return this[k] 
+      else return this.raw[k] ;
+    }
 
 }
 
