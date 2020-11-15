@@ -7,7 +7,7 @@ export class TraitList {
    constructor ( r: Trait[] ) {
        this.traitlist = r ;
        for ( let trait of r ) {
-         this[trait.raw["arm:hasID"]] = trait ;
+         this[trait.label] = trait ;
        }
    }
    
