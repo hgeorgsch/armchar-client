@@ -1,6 +1,17 @@
-<div *ngIf="trait">
-<p-panel header="{{trait.label}}" [toggleable]="true" class="dark-panel">
-   <strong>Score:</strong> {{trait.score}}
-   <strong>Points:</strong> {{trait.xp}}
-</p-panel>
+<div class="p-grid scorecard">
+   <div class="p-col-6">
+      <div class="header">{{trait.label}}</div> 
+   </div>
+   <div class="p-col-3">
+      <div class="scorebox">
+	 <div class="score">{{trait.score}}</div> 
+	 <div class="label">Score</div> 
+      </div>
+   </div>
+   <div class="p-col-3">
+      <div class="scorebox">
+	 <div class="score">{{trait.xp}}</div> 
+	 <div class="label">Points</div> 
+      </div>
+   </div>
 </div>

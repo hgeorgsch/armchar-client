@@ -1,0 +1,12 @@
+
+.scorecard .scorebox {
+   text-align: center ;
+   border: solid ;
+}
+.scorecard .header{
+   font-size: 120% ;
+   vertical-align: text-top;
+}
+.scorecard .scorebox .label {
+   font-size: 65% ;
+}
