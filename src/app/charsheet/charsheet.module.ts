@@ -20,9 +20,7 @@ import {SidebarModule} from 'primeng/sidebar';
 import { VfComponent } from './vf.component';
 import { EffectTraitComponent } from './effect-trait.component';
 import { ScoreComponent } from './score.component';
-import { ArtsComponent } from './arts.component';
-import { ArtComponent } from './art.component';
-import { SpellsComponent } from './spells.component';
+import { MagicPageModule } from './magic-page/magic-page.module';
 
 @NgModule({
   declarations: [
@@ -35,9 +33,6 @@ import { SpellsComponent } from './spells.component';
     VfComponent,
     EffectTraitComponent,
     ScoreComponent,
-    ArtsComponent,
-    ArtComponent,
-    SpellsComponent,
   ],
   imports: [
     CommonModule,
@@ -47,6 +42,7 @@ import { SpellsComponent } from './spells.component';
     TabViewModule,
     CardModule,
     SidebarModule,
+    MagicPageModule,
   ]
 })
 export class CharsheetModule { }

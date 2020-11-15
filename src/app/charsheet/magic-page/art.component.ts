@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Trait } from '../trait';
+import { Trait } from '../../trait';
 
 @Component({
   selector: 'app-art',

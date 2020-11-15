@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Spell } from '../spell';
+import { Spell } from '../../spell';
 
 @Component({
   selector: 'app-spells',
