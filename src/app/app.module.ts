@@ -2,14 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations' ;
+import { ToolbarModule } from 'primeng/toolbar';
+import { ButtonModule } from 'primeng/button';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import {CardModule} from 'primeng/card';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer.component';
 
 
+
 import { RouterModule } from '@angular/router';
 import { MessagesComponent } from './messages/messages.component';
+import { TopbarComponent } from './topbar/topbar.component';
 
 
 
@@ -18,17 +25,16 @@ import { MessagesComponent } from './messages/messages.component';
     AppComponent,
     FooterComponent,
     MessagesComponent,
-    // CharsheetComponent,
-    // CharheadComponent,
-    // AbilitiesComponent,
-    // CharacteristicsComponent,
-    // PtraitComponent,
-    // ReputationComponent,
+    TopbarComponent, 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    NoopAnimationsModule,
+    NoopAnimationsModule, 
+    ToolbarModule,
+    ButtonModule,
+    SplitButtonModule,
+    CardModule,
     // AppRoutingModule,
     RouterModule.forRoot([
     { path: '', redirectTo: 'charsheet', pathMatch: 'full'  },
