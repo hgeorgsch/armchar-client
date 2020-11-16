@@ -39,7 +39,9 @@ import { TopbarComponent } from './topbar/topbar.component';
     RouterModule.forRoot([
     { path: '', redirectTo: 'charsheet', pathMatch: 'full'  },
     { path: 'charsheet', loadChildren: 
-      () => import('./charsheet/charsheet.module').then( m => m.CharsheetModule ) }
+      () => import('./charsheet/charsheet.module').then( m => m.CharsheetModule ) },
+    { path: 'saga', loadChildren: 
+      () => import('./saga/saga.module').then( m => m.SagaModule ) }
 ], { relativeLinkResolution: 'legacy' }),
   ],
 
