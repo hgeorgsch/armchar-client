@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CharacteristicList } from '../characteristic';
+import { CharacteristicList } from '../../characteristic';
 
 @Component({
   selector: 'app-characteristics',

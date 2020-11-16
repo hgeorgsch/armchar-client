@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AbilityList } from '../ability';
+import { AbilityList } from '../../ability';
 
 @Component({
   selector: 'app-abilities',
