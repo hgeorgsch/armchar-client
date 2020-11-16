@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap, map, catchError } from 'rxjs/operators';
 import { Charsheet, charsheetParse } from './charsheet';
+import { Saga } from './saga';
 // import { MessageService } from './message.service';
 
 // import * as jsonld from 'jsonld';
@@ -20,6 +21,12 @@ export class ArmcharService {
     private http: HttpClient
     // public messageService: MessageService
   ) { }
+
+  getSaga(id: string): Observable<Saga> {
+     const url = `${this.charsheetURI}${id}`;
+     const cid = `armchar:${id}`;
+     return this.http.get<Saga>(url).pipe( map( j => this.process(j,cid) ) ) ;
+  }
 
   getCharsheet(id: string, t:string): Observable<Charsheet> {
      const url = `${this.charsheetURI}${id}/${t}`;
