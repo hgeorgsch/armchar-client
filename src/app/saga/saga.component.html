@@ -1,1 +1,20 @@
-<p>saga works!</p>
+<div *ngIf="saga">
+<h1>{{saga.name}}</h1>
+
+<p-table [value]="saga.get('hasCharacter')" [autoLayout]="true"> 
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Character</th>
+            <th>Profession</th>
+            <th>Class</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-char>
+        <tr>
+            <td>{{char["arm:hasName"]}}</td>
+            <td>{{char["arm:hasProfession"]}}</td>
+            <td></td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>
