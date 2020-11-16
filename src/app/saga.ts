@@ -5,11 +5,12 @@ import { Spell, parseSpells } from './spell';
 
 export class Saga { 
   id: string;
-  name: string;
+  title: string;
+  description?: string ;
   raw?: any ;
   constructor(id:string,n:string) {
     this.id = id ;
-    this.name = n ;
+    this.title = n ;
   }
   get(k:string) {
     if ( k in this ) 
@@ -21,7 +22,8 @@ export class Saga {
 
 export function  sagaParse( j: any ): Saga {
   var n = j["@id"] ;
-  var cs = new Saga( j["@id"], j["arm:hasName"] ) ;
+  var cs = new Saga( j["@id"], j["arm:hasTitle"] ) ;
+  cs.description = j["rdfs:comment"] ;
   cs.raw = j ;
   return cs ;
 }

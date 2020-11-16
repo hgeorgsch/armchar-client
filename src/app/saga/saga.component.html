@@ -1,5 +1,7 @@
 <div *ngIf="saga">
-<h1>{{saga.name}}</h1>
+<h1>{{saga.title}}</h1>
+
+<p>{{saga.description}}</p>
 
 <p-table [value]="saga.get('hasCharacter')" [autoLayout]="true"> 
     <ng-template pTemplate="header">
