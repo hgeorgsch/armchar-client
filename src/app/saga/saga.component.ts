@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArmcharService } from '../armchar.service';
+import { Saga, sagaParse } from '../saga';
 
 @Component({
   selector: 'app-saga',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SagaComponent implements OnInit {
 
-  constructor() { }
+  char = "contestedlands" ;
+  saga: Saga | undefined ;
+  subs: any ;
+
+  constructor( private armcharService: ArmcharService ) { }
 
   ngOnInit(): void {
+     this.subs = this.armcharService.getSaga( this.char )
+	 .subscribe( cs => this.saga = sagaParse( cs ) ) 
   }
 
 }
