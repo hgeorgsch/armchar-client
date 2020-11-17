@@ -8,17 +8,21 @@ export class CharacterAdvancement {
     xp?: number ;
     traits?: Trait[] ;
     raw: any ;
-    constructor(ob) {
+    constructor(ob,dict?) {
       console.log( ob ) ;
       this.season = ob["arm:atSeason"] ;
       this.year = ob["arm:inYear"] ;
       this.type = ob["arm:hasAdvancementTypeString"] || "" ;
       if ( "arm:awardsXP" in ob ) 
          this.xp = ob["arm:awardsXP"] ;
-      if ( "map" in ob["arm:advanceTrait"] )
-         this.traits = parseTraits( ob["arm:advanceTrait"] ) ;
-      else
-         this.traits = parseTraits( [ ob["arm:advanceTrait"] ] ) ;
+
+      let tl = ob["arm:advanceTrait"] ;
+      if ( ! ( "map" in tl ) ) tl = [ tl ] ;
+      if ( typeof(dict) !== "undefined" ) {
+         tl = tl.map( x => dict[x["@id"]] ) ;
+      }
+
+      this.traits = parseTraits( tl ) ;
       this.raw = ob ;
     }
     get(k) : string {
@@ -28,7 +32,7 @@ export class CharacterAdvancement {
 
 }
 
-export function parseCharacterAdvancements( l: any[] ) : CharacterAdvancement[] {
+export function parseCharacterAdvancements( l: any[], dict: any ) : CharacterAdvancement[] {
    if ( typeof(l) === "undefined" ) return [] ;
-   return l.map( ob => new CharacterAdvancement(ob) ) ;
+   return l.map( ob => new CharacterAdvancement(ob,dict) ) ;
 }

@@ -54,6 +54,7 @@ export class ArmcharService {
 	     rr[key] = [  r[rr[key]["@id"]] ] ;
 	  }
 	}
+	rr["@dict"] = r ;
 	console.log( rr ) ;
 	return rr ;
   }
