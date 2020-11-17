@@ -33,5 +33,6 @@ export class Spell {
 }
 
 export function parseSpells( l: any[] ) : Spell[] {
+   if ( typeof(l) === "undefined" ) return [] ;
    return l.map( ob => new Spell(ob) ) ;
 }
