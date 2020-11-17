@@ -31,10 +31,12 @@ export class ArmcharService {
   getCharsheet(id: string, t:string): Observable<Charsheet> {
      const url = `${this.charsheetURI}${id}/${t}`;
      const cid = `armchar:${id}#${t}`;
+     console.log( url ) ;
      return this.http.get<Charsheet>(url).pipe( map( j => this.process(j,cid) ) ) ;
   }
   process(j:any,cid:string): any {
-	console.log( cid ) ;
+	console.log( cid, j ) ;
+	if ( ! "@graph" in j ) return undefined ;
 	var g = j["@graph"] ;
         var r = {} ;
 	g.forEach( (el) => { r[el["@id"]] = el } ) ;

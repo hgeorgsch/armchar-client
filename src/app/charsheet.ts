@@ -24,6 +24,7 @@ export class Charsheet { id: string;
 }
 
 export function  charsheetParse( j: any ): Charsheet {
+  if ( typeof(j) === "undefined" ) return undefined ;
   var n = j["@id"] ;
   var cs = new Charsheet( j["@id"], j["arm:hasName"] ) ;
   cs.raw = j ;
