@@ -2,6 +2,7 @@ import { Trait, parseTraits } from './trait' ;
 
 export class CharacterAdvancement {
 
+    type: string ;
     season: string ;
     year: number ;
     xp?: number ;
@@ -11,6 +12,7 @@ export class CharacterAdvancement {
       console.log( ob ) ;
       this.season = ob["arm:atSeason"] ;
       this.year = ob["arm:inYear"] ;
+      this.type = ob["arm:hasAdvancementTypeString"] || "" ;
       if ( "arm:awardsXP" in ob ) 
          this.xp = ob["arm:awardsXP"] ;
       this.traits = parseTraits( ob["arm:advanceTrait"] ) ;
