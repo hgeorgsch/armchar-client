@@ -1,14 +1,19 @@
-import { Trait, TraitList } from './trait' ;
+import { Trait, parseTraits } from './trait' ;
 
 export class CharacterAdvancement {
 
     season: string ;
     year: number ;
+    xp?: number ;
+    traits?: Trait[] ;
     raw: any ;
     constructor(ob) {
       console.log( ob ) ;
       this.season = ob["arm:atSeason"] ;
       this.year = ob["arm:inYear"] ;
+      if ( "arm:awardsXP" in ob ) 
+         this.xp = ob["arm:awardsXP"] ;
+      this.traits = parseTraits( ob["arm:advanceTrait"] ) ;
       this.raw = ob ;
     }
     get(k) : string {
