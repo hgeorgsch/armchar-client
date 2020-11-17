@@ -34,3 +34,20 @@ export function  charsheetParse( j: any ): Charsheet {
   cs.othertraits = parseTraitList( j["arm:hasOtherTrait"] ) ;
   return cs ;
 }
+
+export class Character { 
+  id: string;
+  name: string;
+  raw?: any ;
+
+  constructor(id:string,n:string) {
+    this.id = id ;
+    this.name = n ;
+  }
+  get(k:string) {
+    if ( k in this ) 
+       return this[k] ;
+    if ( "arm:" + k in this.raw ) 
+       return this.raw["arm:"+k] ;
+  }
+}
