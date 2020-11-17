@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap, map, catchError } from 'rxjs/operators';
-import { Charsheet, charsheetParse } from './charsheet';
+import { Character, Charsheet } from './charsheet';
 import { Saga } from './saga';
 // import { MessageService } from './message.service';
 
@@ -28,6 +28,11 @@ export class ArmcharService {
      return this.http.get<Saga>(url).pipe( map( j => this.process(j,cid) ) ) ;
   }
 
+  getCharacter(id: string): Observable<Character> {
+     const url = `${this.charsheetURI}${id}`;
+     const cid = `armchar:${id}`;
+     return this.http.get<Character>(url).pipe( map( j => this.process(j,cid) ) ) ;
+  }
   getCharsheet(id: string, t:string): Observable<Charsheet> {
      const url = `${this.charsheetURI}${id}/${t}`;
      const cid = `armchar:${id}#${t}`;

@@ -53,3 +53,7 @@ export class Trait {
 export function parseTraitList( l: any[] ) : TraitList {
    return new TraitList( l.map( ob => new Trait(ob) ) ) ;
 }
+export function parseTraits( l: any[] ) : Trait[] {
+   if ( ! l ) return [] ;
+   return ( l.map( ob => new Trait(ob) ) ) ;
+}
