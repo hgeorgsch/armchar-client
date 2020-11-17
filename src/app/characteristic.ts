@@ -30,5 +30,6 @@ function parseCharacteristic( ob ) : Characteristic {
    } as Characteristic ;
 }
 export function parseCharList( l: any[] ) : CharacteristicList {
+   if ( typeof(l) === "undefined" ) return undefined ;
    return new CharacteristicList( l.map( parseCharacteristic ) ) ;
 }

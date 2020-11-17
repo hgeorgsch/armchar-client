@@ -34,5 +34,6 @@ function parseAbility( ob ) : Ability {
    } as Ability ;
 }
 export function parseAbilityList( l: any[] ) : AbilityList {
+   if ( typeof(l) === "undefined" ) return undefined ;
    return new AbilityList( l.map( parseAbility ) ) ;
 }

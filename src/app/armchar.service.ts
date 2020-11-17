@@ -41,7 +41,7 @@ export class ArmcharService {
   }
   process(j:any,cid:string): any {
 	console.log( cid, j ) ;
-	if ( ! "@graph" in j ) return undefined ;
+	if ( ! ( "@graph" in j ) ) return undefined ;
 	var g = j["@graph"] ;
         var r = {} ;
 	g.forEach( (el) => { r[el["@id"]] = el } ) ;
