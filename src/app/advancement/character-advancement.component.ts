@@ -9,7 +9,7 @@ import { CharacterAdvancement, parseCharacterAdvancements } from '../advancement
 })
 export class CharacterAdvancementComponent implements OnInit {
 
-  @Input() char ;
+  @Input() char : Character ;
 
   constructor(  ) { }
 

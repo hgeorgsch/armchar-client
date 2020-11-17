@@ -11,6 +11,8 @@ import {CardModule} from 'primeng/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer.component';
+import { PageAdvancementsComponent } from './page-advancements.component';
+import { AdvancementModule } from './advancement/advancement.module';
 
 
 
@@ -26,6 +28,7 @@ import { TopbarComponent } from './topbar/topbar.component';
     FooterComponent,
     MessagesComponent,
     TopbarComponent, 
+    PageAdvancementsComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,10 +39,12 @@ import { TopbarComponent } from './topbar/topbar.component';
     SplitButtonModule,
     CardModule,
     // AppRoutingModule,
+    AdvancementModule,
     RouterModule.forRoot([
     { path: '', redirectTo: 'charsheet', pathMatch: 'full'  },
     { path: 'charsheet', loadChildren: 
       () => import('./charsheet/charsheet.module').then( m => m.CharsheetModule ) },
+    // { path: 'adv', component: PageAdvancementComponent },
     { path: 'saga', loadChildren: 
       () => import('./saga/saga.module').then( m => m.SagaModule ) }
 ], { relativeLinkResolution: 'legacy' }),
