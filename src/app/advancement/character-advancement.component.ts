@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ArmcharService } from '../armchar.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { Character, characterParse } from '../charsheet';
 import { CharacterAdvancement, parseCharacterAdvancements } from '../advancement';
 
@@ -10,11 +9,11 @@ import { CharacterAdvancement, parseCharacterAdvancements } from '../advancement
 })
 export class CharacterAdvancementComponent implements OnInit {
 
-  constructor( private armcharService: ArmcharService ) { }
+  @Input() char ;
+
+  constructor(  ) { }
 
   ngOnInit(): void {
-     this.subs = this.armcharService.getCharacter( this.char, this.time )
-	 .subscribe( cs => this.charsheet = characterParse( cs ) ) 
   }
 
 }
