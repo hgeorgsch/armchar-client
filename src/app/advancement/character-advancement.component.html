@@ -1,7 +1,7 @@
 <p>character-advancement works!</p>
 <div *ngIf="char">
    <div *ngFor="let adv of char.adv">
-      {{adv.season}} {{adv.year}} {{adv.xp}}XP
+      {{adv.type}} {{adv.season}} {{adv.year}} {{adv.xp}}XP
       {{adv | json}}
    </div>
 </div>
