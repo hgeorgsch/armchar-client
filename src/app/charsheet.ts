@@ -59,6 +59,6 @@ export function  characterParse( j: any ): Character {
   var n = j["@id"] ;
   var cs = new Character( j["@id"], j["arm:hasName"] ) ;
   cs.raw = j ;
-  cs.adv = parseCharacterAdvancements( j["arm:hasCharacterAdvancement"] ) ;
+  cs.adv = parseCharacterAdvancements( j["arm:hasAdvancement"] ) ;
   return cs ;
 }

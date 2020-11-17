@@ -15,7 +15,10 @@ export class CharacterAdvancement {
       this.type = ob["arm:hasAdvancementTypeString"] || "" ;
       if ( "arm:awardsXP" in ob ) 
          this.xp = ob["arm:awardsXP"] ;
-      this.traits = parseTraits( ob["arm:advanceTrait"] ) ;
+      if ( "map" in ob["arm:advanceTrait"] )
+         this.traits = parseTraits( ob["arm:advanceTrait"] ) ;
+      else
+         this.traits = parseTraits( [ ob["arm:advanceTrait"] ] ) ;
       this.raw = ob ;
     }
     get(k) : string {
@@ -26,5 +29,6 @@ export class CharacterAdvancement {
 }
 
 export function parseCharacterAdvancements( l: any[] ) : CharacterAdvancement[] {
+   if ( typeof(l) === "undefined" ) return [] ;
    return l.map( ob => new CharacterAdvancement(ob) ) ;
 }

@@ -1,6 +1,6 @@
 <p>character-advancement works!</p>
-<div *nfIf="char">
-   <div *nfFor="let adv of char">
-      {{adv.type}}
+<div *ngIf="char">
+   <div *ngFor="let adv of char.adv">
+      {{adv | json}}
    </div>
 </div>

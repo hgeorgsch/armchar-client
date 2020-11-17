@@ -44,7 +44,7 @@ import { TopbarComponent } from './topbar/topbar.component';
     { path: '', redirectTo: 'charsheet', pathMatch: 'full'  },
     { path: 'charsheet', loadChildren: 
       () => import('./charsheet/charsheet.module').then( m => m.CharsheetModule ) },
-    // { path: 'adv', component: PageAdvancementComponent },
+    { path: 'adv', component: PageAdvancementsComponent },
     { path: 'saga', loadChildren: 
       () => import('./saga/saga.module').then( m => m.SagaModule ) }
 ], { relativeLinkResolution: 'legacy' }),
