@@ -7,9 +7,9 @@ export class CharacterAdvancement {
     raw: any ;
     constructor(ob) {
       console.log( ob ) ;
+      this.season = ob["arm:atSeason"] ;
+      this.year = ob["arm:inYear"] ;
       this.raw = ob ;
-      this.season = "" ;
-      this.season = 0 ;
     }
     get(k) : string {
       if ( k in this ) return this[k] 
