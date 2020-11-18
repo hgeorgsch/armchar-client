@@ -4,6 +4,7 @@ export class CharacterAdvancement {
 
     type: string ;
     season: string ;
+    description: string ;
     year: number ;
     xp?: number ;
     traits?: Trait[] ;
@@ -13,6 +14,7 @@ export class CharacterAdvancement {
       this.season = ob["arm:atSeason"] ;
       this.year = ob["arm:inYear"] ;
       this.type = ob["arm:hasAdvancementTypeString"] || "" ;
+      this.description = ob["arm:hasAdvancementDescription"] || "" ;
       if ( "arm:awardsXP" in ob ) 
          this.xp = ob["arm:awardsXP"] ;
 
@@ -37,6 +39,7 @@ function timerank( x: any ) {
   var r = 0 ;
   if ( "year" in x ) r += x["year"]*10 ;
   if ( "season" in x ) r += seasonval[x["season"]] ;
+  return r ;
 }
 
 function compare( x : CharacterAdvancement, y : CharacterAdvancement ) {
