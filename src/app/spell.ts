@@ -11,7 +11,7 @@ export class Spell {
     form: string ;
     level: number ;
     constructor(ob) {
-      console.log( ob ) ;
+      // console.log( ob ) ;
       this.spellName = ob["rdfs:label"] ;
       this.raw = ob ;
       this.range = ob["arm:hasRangeString"] || "";

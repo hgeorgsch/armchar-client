@@ -10,7 +10,6 @@ export class CharacterAdvancement {
     traits?: Trait[] ;
     raw: any ;
     constructor(ob,dict?) {
-      console.log( ob ) ;
       this.season = ob["arm:atSeason"] ;
       this.year = ob["arm:inYear"] ;
       this.type = ob["arm:hasAdvancementTypeString"] || "" ;

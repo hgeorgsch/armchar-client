@@ -31,6 +31,7 @@ export class ArmcharService {
   getCharacter(id: string): Observable<Character> {
      const url = `${this.charsheetURI}${id}`;
      const cid = `armchar:${id}`;
+     console.log( url ) ;
      return this.http.get<Character>(url).pipe( map( j => this.process(j,cid) ) ) ;
   }
   getCharsheet(id: string, t:string): Observable<Charsheet> {

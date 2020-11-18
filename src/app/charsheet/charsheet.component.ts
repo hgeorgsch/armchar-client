@@ -1,6 +1,4 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { ArmcharService } from '../armchar.service';
 import { Charsheet, charsheetParse } from '../charsheet';
 import { Trait } from '../trait';
 import { switchMap } from 'rxjs/operators';
