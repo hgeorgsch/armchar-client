@@ -1,5 +1,16 @@
 <div class="p-grid">
   <div class="p-col-8">
+    <div class="header">
+     {{character.name}}
+    </div>
+  </div>
+  <div class="p-col-4">
+    <div class="header">
+     {{charsheet.get("inYear")}}
+     {{charsheet.get("atSeason")}}
+    </div>
+  </div>
+  <div class="p-col-8">
     <app-charsheet [charsheet]="charsheet"></app-charsheet>
   </div>
   <div class="p-col-4">
