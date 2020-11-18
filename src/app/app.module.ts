@@ -6,6 +6,8 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import {CardModule} from 'primeng/card';
+import {ScrollPanelModule} from 'primeng/scrollpanel';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,6 +39,7 @@ import { PageCharsheetComponent } from './page-charsheet.component';
     ButtonModule,
     SplitButtonModule,
     CardModule,
+    ScrollPanelModule,
     // AppRoutingModule,
     CharsheetModule,
     AdvancementModule,
