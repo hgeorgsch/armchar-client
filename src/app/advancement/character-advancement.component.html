@@ -1,14 +1,15 @@
 <div *ngIf="char">
-   <div *ngFor="let adv of char.adv">
+   <p-card *ngFor="let adv of char.adv">
+      <p-header>
       {{adv.type}} {{adv.season}} {{adv.year}} {{adv.xp}}XP
-      <br>
-      <div *ngFor="let trait of adv.traits">
+      </p-header>
+      <p-card *ngFor="let trait of adv.traits">
 	 {{trait.label}}
 	 +{{trait.raw["arm:addedXP"]}} -> {{trait.raw["arm:hasTotalXP"]}} 
 	 ({{trait.raw["arm:hasScore"]}})
-      </div>
+      </p-card>
       <br>
       {{adv | json}} 
       <hr>
-   </div>
+   </p-card>
 </div>

@@ -56,7 +56,7 @@ export class Character {
   }
 }
 export function  characterParse( j: any ): Character {
-  var n = j["@id"] ;
+  if ( typeof(j) === "undefined" ) return undefined ;
   var cs = new Character( j["@id"], j["arm:hasName"] ) ;
   cs.raw = j ;
   cs.adv = parseCharacterAdvancements( j["arm:hasAdvancement"], j["@dict"] ) ;
