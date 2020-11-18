@@ -19,6 +19,7 @@ import { AdvancementModule } from './advancement/advancement.module';
 import { RouterModule } from '@angular/router';
 import { MessagesComponent } from './messages/messages.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import { CharacterComponent } from './character/character.component';
 
 
 
@@ -28,7 +29,7 @@ import { TopbarComponent } from './topbar/topbar.component';
     FooterComponent,
     MessagesComponent,
     TopbarComponent, 
-    PageAdvancementsComponent,
+    PageAdvancementsComponent, CharacterComponent,
   ],
   imports: [
     BrowserModule,
