@@ -31,6 +31,9 @@ import { MundanePageModule } from './mundane-page/mundane-page.module';
     SidebarModule,
     MundanePageModule,
     MagicPageModule,
-  ]
+  ],
+  exports: [
+    CharsheetComponent,
+  ],
 })
 export class CharsheetModule { }

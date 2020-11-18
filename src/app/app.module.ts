@@ -12,16 +12,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer.component';
 import { PageAdvancementsComponent } from './page-advancements.component';
+import { CharsheetModule } from './charsheet/charsheet.module';
 import { AdvancementModule } from './advancement/advancement.module';
-
-
 
 import { RouterModule } from '@angular/router';
 import { MessagesComponent } from './messages/messages.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { CharacterComponent } from './character/character.component';
-
-
+import { PageCharsheetComponent } from './page-charsheet.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +27,7 @@ import { CharacterComponent } from './character/character.component';
     FooterComponent,
     MessagesComponent,
     TopbarComponent, 
-    PageAdvancementsComponent, CharacterComponent,
+    PageAdvancementsComponent, CharacterComponent, PageCharsheetComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,11 +38,12 @@ import { CharacterComponent } from './character/character.component';
     SplitButtonModule,
     CardModule,
     // AppRoutingModule,
+    CharsheetModule,
     AdvancementModule,
     RouterModule.forRoot([
     { path: '', redirectTo: 'charsheet', pathMatch: 'full'  },
-    { path: 'charsheet', loadChildren: 
-      () => import('./charsheet/charsheet.module').then( m => m.CharsheetModule ) },
+    { path: 'character', component: CharacterComponent, },
+    { path: 'charsheet', component: PageCharsheetComponent, },
     { path: 'adv', component: PageAdvancementsComponent },
     { path: 'saga', loadChildren: 
       () => import('./saga/saga.module').then( m => m.SagaModule ) }
