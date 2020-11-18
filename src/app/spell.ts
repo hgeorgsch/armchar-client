@@ -10,6 +10,7 @@ export class Spell {
     technique: string ;
     form: string ;
     level: number ;
+    casting: number ;
     constructor(ob) {
       // console.log( ob ) ;
       this.spellName = ob["rdfs:label"] ;
@@ -20,6 +21,14 @@ export class Spell {
       this.technique = ob["arm:hasTechniqueString"] || "";
       this.form = ob["arm:hasFormString"] || "";
       this.level = ob["arm:hasLevel"] || 0;
+      if ( "arm:hasCastingScore" in ob ) {
+         var casting = ob["arm:hasCastingScore"] ;
+	 if ( typeof(this.casting) === "number" ) {
+	    this.casting = casting ;
+	 } else {
+	    this.casting = casting["@value"] ;
+	 }
+      }
     }
     getSignature() : string {
       return this.technique.substring(0,2) 
