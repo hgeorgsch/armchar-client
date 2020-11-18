@@ -39,6 +39,7 @@ function timerank( x: any ) {
   var r = 0 ;
   if ( "year" in x ) r += x["year"]*10 ;
   if ( "season" in x ) r += seasonval[x["season"]] ;
+  return r ;
 }
 
 function compare( x : CharacterAdvancement, y : CharacterAdvancement ) {
