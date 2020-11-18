@@ -4,6 +4,7 @@ export class CharacterAdvancement {
 
     type: string ;
     season: string ;
+    description: string ;
     year: number ;
     xp?: number ;
     traits?: Trait[] ;
@@ -13,6 +14,7 @@ export class CharacterAdvancement {
       this.season = ob["arm:atSeason"] ;
       this.year = ob["arm:inYear"] ;
       this.type = ob["arm:hasAdvancementTypeString"] || "" ;
+      this.description = ob["arm:hasAdvancementDescription"] || "" ;
       if ( "arm:awardsXP" in ob ) 
          this.xp = ob["arm:awardsXP"] ;
 
