@@ -32,7 +32,22 @@ export class CharacterAdvancement {
 
 }
 
+function timerank( x: any ) {
+  var seasonval = [ null, "Winter", "Spring", "Summer", "Autumn" ] ; 
+  var r = 0 ;
+  if ( "year" in x ) r += x["year"]*10 ;
+  if ( "season" in x ) r += seasonval[x["season"]] ;
+}
+
+function compare( x : CharacterAdvancement, y : CharacterAdvancement ) {
+   if ( timerank( x ) < timerank( y ) ) { return -1 }
+   else if ( timerank( x ) > timerank( y ) ) { return +1 }
+   else return 0 ;
+}
+
 export function parseCharacterAdvancements( l: any[], dict: any ) : CharacterAdvancement[] {
    if ( typeof(l) === "undefined" ) return [] ;
-   return l.map( ob => new CharacterAdvancement(ob,dict) ) ;
+   var list = l.map( ob => new CharacterAdvancement(ob,dict) ) ;
+   list.sort( compare ) ;
+   return list ;
 }
