@@ -6,6 +6,7 @@ import { parseCharacterAdvancements, CharacterAdvancement } from './advancement'
 
 export class Charsheet { id: string;
   name: string;
+  age: number ;
   raw?: any ;
   charlist?: CharacteristicList ;
   ablist?: AbilityList ;
@@ -34,6 +35,10 @@ export function  charsheetParse( j: any ): Charsheet {
   cs.arts = parseTraitList( j["arm:hasArt"] ) ;
   cs.spells = parseSpells( j["arm:hasSpell"] ) ;
   cs.othertraits = parseTraitList( j["arm:hasOtherTrait"] ) ;
+  cs.age = j["arm:hasAge"] ;
+  if ( ( typeof(cs.age) === "object" ) && ( "@value" in cs.age ) )
+     cs.age = cs.age["@value"] ;
+  console.log(cs.age) ;
   return cs ;
 }
 
