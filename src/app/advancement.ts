@@ -33,7 +33,7 @@ export class CharacterAdvancement {
 }
 
 function timerank( x: any ) {
-  var seasonval = [ null, "Winter", "Spring", "Summer", "Autumn" ] ; 
+  var seasonval = { "Winter" : 1, "Spring" : 2, "Summer" : 3, "Autumn" : 4 } ; 
   var r = 0 ;
   if ( "year" in x ) r += x["year"]*10 ;
   if ( "season" in x ) r += seasonval[x["season"]] ;
