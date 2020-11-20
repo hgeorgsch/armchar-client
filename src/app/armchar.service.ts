@@ -40,6 +40,25 @@ export class ArmcharService {
      console.log( url ) ;
      return this.http.get<Charsheet>(url).pipe( map( j => this.process(j,cid) ) ) ;
   }
+  getCharsheetPost( uri: string ): Observable<Charsheet> {
+     const url = `${this.charsheetURI}`;
+     const cid = uri ; // `armchar:${id}#${t}`;
+     console.log( uri, url ) ;
+     return this.http.post<Charsheet>(url).pipe( map( j => this.process(j,cid) ) ) ;
+  }
+
+
+2
+
+   const headers = new HttpHeaders().set(
+     'Content-Type',
+    'application/x-www-form-urlencoded;'
+   );
+
+   body = 'grant_type=' + password + '&username=' + setData.username + '&password=' +
+   setData.password + '&Client_Id=' + 'XXXXX-5B3C-4A7D-WEW-23BWWWF9B7872';
+
+   return this.http.post('abc.com/authtoken', body , {headers: headers })
   process(j:any,cid:string): any {
 	console.log( cid, j ) ;
 	if ( ! ( "@graph" in j ) ) return undefined ;
