@@ -13,7 +13,7 @@ export class Spell {
     casting: number ;
     constructor(ob) {
       // console.log( ob ) ;
-      this.spellName = ob["rdfs:label"] ;
+      this.spellName = ob["arm:hasLabel"] ;
       this.raw = ob ;
       this.range = ob["arm:hasRangeString"] || "";
       this.duration = ob["arm:hasDurationString"] || "";

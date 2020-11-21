@@ -23,7 +23,7 @@ export class Trait {
 
    constructor(ob) {
       this.order = ob["arm:hasOrder"] || 0 ;
-      this.label = ob["rdfs:label"] ;
+      this.label = ob["arm:hasLabel"] ;
       this.score = ob["arm:hasScore"] || 0 ;
       this.xp = ob["arm:hasXP"] || 0 ;
       this.raw = ob ;

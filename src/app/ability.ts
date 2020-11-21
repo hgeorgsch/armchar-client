@@ -27,7 +27,7 @@ export class Ability extends Trait {
 
 function parseAbility( ob ) : Ability {
    return { order: ob["arm:hasOrder"] || 0,
-            label: ob["rdfs:label"],
+            label: ob["arm:hasLabel"],
             spec: ob["arm:hasSpeciality"] || "",
             score: ob["arm:hasScore"] || 0,
             xp: ob["arm:hasXP"] || 0
