@@ -61,22 +61,14 @@ export class ArmcharService {
 
   process(j:any,cid:string): any {
 	console.log( cid, j ) ;
+	if ( ( "@type" in j ) ) return j ;
 	if ( ! ( "@graph" in j ) ) return undefined ;
 	var g = j["@graph"] ;
-        var r = {} ;
-	g.forEach( (el) => { r[el["@id"]] = el } ) ;
-	var rr = r[cid] ;
-	for ( let key in rr ) {
-	  if ( rr[key] instanceof Array ) {
-	     rr[key] = rr[key].map( k => r[k["@id"]] ) ;
-	  }
-	  if ( rr[key] instanceof Object && '@id' in rr[key] ) {
-	     rr[key] = [  r[rr[key]["@id"]] ] ;
-	  }
-	}
-	rr["@dict"] = r ;
-	console.log( rr ) ;
-	return rr ;
+	console.log( "graph", g ) ;
+	var cs = g[0] ;
+	cs["@context"] = j["@context"] ;
+	console.log( "process", cs ) ;
+	return cs ;
   }
 
   private log(message: string) {

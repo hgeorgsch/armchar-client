@@ -1,16 +1,16 @@
 <div class="p-grid scorecard">
    <div class="p-col-6">
-      <div class="header">{{trait.label}}</div> 
+      <div *ngIf="trait" class="header">{{trait.label}}</div> 
    </div>
    <div class="p-col-3">
       <div class="scorebox">
-	 <div class="score">{{trait.score}}</div> 
+	 <div *ngIf="trait" class="score">{{trait.score}}</div> 
 	 <div class="label">Score</div> 
       </div>
    </div>
    <div class="p-col-3">
       <div class="scorebox">
-	 <div class="score">{{trait.xp}}</div> 
+	 <div *ngIf="trait" class="score">{{trait.xp}}</div> 
 	 <div class="label">Points</div> 
       </div>
    </div>
