@@ -11,15 +11,17 @@ export class Charsheet { id: string;
   arts?: TraitList ;
   spells?: Spell[] ;
   othertraits?: TraitList ;
+  raw?: any ;
   constructor(id:string,n:string) {
     this.id = id ;
     this.name = n ;
+    console.log( "New charsheet", id, n ) ;
   }
   get(k:string) {
     if ( k in this ) 
        return this[k] ;
-    if ( "arm:" + k in this ) 
-       return this["arm:"+k] ;
+    if ( "arm:" + k in this.raw ) 
+       return this.raw["arm:"+k] ;
   }
 }
 
@@ -27,11 +29,13 @@ export function  charsheetParse( j: any ): Charsheet {
   if ( typeof(j) === "undefined" ) return undefined ;
   var n = j["@id"] ;
   var cs = new Charsheet( j["@id"], j["arm:hasName"] ) ;
+  cs.raw = j ;
   cs.charlist = parseCharList( j["arm:hasCharacteristic"] ) ;
   cs.ablist = parseAbilityList( j["arm:hasAbility"] ) ;
   cs.arts = parseTraitList( j["arm:hasArt"] ) ;
   cs.spells = parseSpells( j["arm:hasSpell"] ) ;
   cs.othertraits = parseTraitList( j["arm:hasOtherTrait"] ) ;
+  console.log( "charsheetParse", cs ) ;
   return cs ;
 }
 
