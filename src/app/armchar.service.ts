@@ -38,7 +38,8 @@ export class ArmcharService {
      const url = `${this.charsheetURI}${id}/${t}`;
      const cid = `armchar:${id}#${t}`;
      console.log( url ) ;
-     return this.http.get<Charsheet>(url).pipe( map( j => this.process(j,cid) ) ) ;
+     return this.http.get<Charsheet>(url).pipe( 
+	 map( j => this.processFramed(j) ) ) ;
   }
   getCharsheetPost( uri: string ): Observable<Charsheet> {
      const url = `${this.charsheetURI}`;
@@ -59,15 +60,15 @@ export class ArmcharService {
 2
 
 
-  process(j:any,cid:string): any {
-	console.log( cid, j ) ;
+  processFramed(j:any): any {
+	console.log( "processFramed", j ) ;
 	if ( ( "@type" in j ) ) return j ;
 	if ( ! ( "@graph" in j ) ) return undefined ;
 	var g = j["@graph"] ;
 	console.log( "graph", g ) ;
 	var cs = g[0] ;
 	cs["@context"] = j["@context"] ;
-	console.log( "process", cs ) ;
+	console.log( "processFramed", cs ) ;
 	return cs ;
   }
 
