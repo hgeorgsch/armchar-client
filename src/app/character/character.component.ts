@@ -42,5 +42,11 @@ export class CharacterComponent implements OnInit {
 	    return this.charsheet = charsheetParse( cs ) } ) ;
 
   }
+  prevSeason() : void {
+     console.log( "prevSeason() not implemented" ) ;
+  }
+  nextSeason() : void {
+     console.log( "nextSeason() not implemented" ) ;
+  }
 
 }

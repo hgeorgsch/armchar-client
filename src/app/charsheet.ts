@@ -6,12 +6,13 @@ import { parseCharacterAdvancements, CharacterAdvancement } from './advancement'
 
 export class Charsheet { id: string;
   name: string;
+  age: number ;
+  raw?: any ;
   charlist?: CharacteristicList ;
   ablist?: AbilityList ;
   arts?: TraitList ;
   spells?: Spell[] ;
   othertraits?: TraitList ;
-  raw?: any ;
   constructor(id:string,n:string) {
     this.id = id ;
     this.name = n ;
@@ -35,6 +36,9 @@ export function  charsheetParse( j: any ): Charsheet {
   cs.arts = parseTraitList( j["arm:hasArt"] ) ;
   cs.spells = parseSpells( j["arm:hasSpell"] ) ;
   cs.othertraits = parseTraitList( j["arm:hasOtherTrait"] ) ;
+  cs.age = j["arm:hasAge"] ;
+  if ( ( typeof(cs.age) === "object" ) && ( "@value" in cs.age ) )
+     cs.age = cs.age["@value"] ;
   console.log( "charsheetParse", cs ) ;
   return cs ;
 }
