@@ -1,11 +1,11 @@
 <div class="p-grid">
   <div class="p-col-8">
-    <div class="header">
+    <div *ngIf="charsheet" class="header">
      {{character.name}}
     </div>
   </div>
   <div class="p-col-4">
-    <div class="header">
+    <div *ngIf="charsheet" class="header">
         <p-button label="<" icon="pi pi-plus" (click)="prevSeason()"></p-button>
      {{charsheet.get("inYear")}}
      {{charsheet.get("atSeason")}}
