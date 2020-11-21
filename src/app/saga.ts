@@ -23,7 +23,7 @@ export class Saga {
 export function  sagaParse( j: any ): Saga {
   var n = j["@id"] ;
   var cs = new Saga( j["@id"], j["arm:hasTitle"] ) ;
-  cs.description = j["rdfs:comment"] ;
+  cs.description = j["arm:hasSagaDescription"] ;
   cs.raw = j ;
   return cs ;
 }

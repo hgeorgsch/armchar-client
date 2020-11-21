@@ -24,7 +24,7 @@ export class Characteristic {
 
 function parseCharacteristic( ob ) : Characteristic {
    return { order: ob["arm:hasOrder"] || 0,
-            label: ob["rdfs:label"],
+            label: ob["arm:hasLabel"],
             spec: ob["arm:hasSpecialisation"] || "",
             score: ob["arm:hasScore"] || 0
    } as Characteristic ;

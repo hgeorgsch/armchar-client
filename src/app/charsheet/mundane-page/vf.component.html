@@ -7,7 +7,7 @@
     </ng-template>
     <ng-template pTemplate="body" let-trait>
         <tr *ngIf="trait">
-            <td>{{trait["rdfs:label"] || "undefined"}}</td>
+            <td>{{trait["arm:hasLabel"] || "undefined"}}</td>
 	    <td>{{getScore(trait)}}</td>
         </tr>
     </ng-template>

@@ -37,7 +37,9 @@ export class Trait {
    }
    public getEffect() : string {
       var e = this.get("hasEffect") ;
+      console.log("effect:", e) ;
       if ( typeof(e) === "string" ) return e ;
+      if ( ! e ) return "no effects" ;
       if ( typeof(e) === "undefined" ) return "no effects" ;
       if ( e === [] ) return "no effects" ;
       var r = "" ;
