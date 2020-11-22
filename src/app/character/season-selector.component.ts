@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit, Input } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { TimeService } from '../time.service';
 
 
 interface Season {
@@ -18,7 +19,8 @@ export class SeasonSelectorComponent implements OnInit {
   seasons: Season[];
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+       private timeService: TimeService) {
         this.seasons = [
             {name: 'Winter', code: 'Winter'},
             {name: 'Spring', code: 'Spring'},
@@ -32,6 +34,9 @@ export class SeasonSelectorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+     this.form.valueChanges.subscribe( val => {
+        this.timeService.setTime( { "year": val.year, "season": val.season } )
+	} ) ;
   }
 
 }
