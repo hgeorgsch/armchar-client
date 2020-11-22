@@ -1,5 +1,4 @@
-<p>season-selector works!</p>
-<div class="form-group" formGroupName="form">
+<div class="form-group" [formGroup]="form">
     <p-dropdown [options]="seasons" formControlName="season"></p-dropdown>
     <input formControlName="year" placeholder="First">
 </div>

@@ -15,6 +15,7 @@ export class TimeService {
     constructor() { }
 
     setTime(time: Time) {
+       console.log( "setTime", time ) ;
        this.subject.next( time );
     }
 

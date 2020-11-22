@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ArmcharService } from '../armchar.service';
 import { TimeService } from '../time.service';
 import { Character, characterParse, Charsheet, charsheetParse } from '../charsheet';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, merge } from 'rxjs/operators';
 import {Observable, EMPTY,of, from } from 'rxjs';
 
 interface Params { char: string,  year: number, season: string }
@@ -32,6 +32,8 @@ export class CharacterComponent implements OnInit {
           typeof(params['season']) !== "undefined" ) {
         this.timeService.setTime( 
            { "year": params['year'], "season": params['season'] } ) ;
+        this.year = params['year'] ;
+        this.season = params['season'] ;
      }
      console.log( "character:", this.char ) ;
      return {
@@ -59,11 +61,14 @@ export class CharacterComponent implements OnInit {
         .pipe( switchMap( (time) => { 
          this.year = time.year ;
          this.season = time.season ;
+         console.log( "getTime", this.year, this.season ) ;
          return this.armcharService.getCharsheet( this.char,
-                          time.year, time.season ) }) )
+                          this.year, this.season ) }) )
 	 .subscribe( cs => { console.log("charsheet", cs) ;
 	    this.charsheet = charsheetParse( cs ) } ) ;
 
+      this.timeService.setTime( 
+           { "year": this.year, "season": this.season } ) ;
   }
   prevSeason() : void {
      console.log( "prevSeason() not implemented" ) ;
