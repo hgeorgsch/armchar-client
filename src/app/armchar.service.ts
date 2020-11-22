@@ -34,9 +34,15 @@ export class ArmcharService {
      console.log( url ) ;
      return this.http.get<Character>(url).pipe( map( j => this.process(j,cid) ) ) ;
   }
-  getCharsheet(id: string, t:string): Observable<Charsheet> {
+  getCharsheet2(id: string, t:string): Observable<Charsheet> {
      const url = `${this.charsheetURI}${id}/${t}`;
      const cid = `armchar:${id}#${t}`;
+     console.log( url ) ;
+     return this.http.get<Charsheet>(url).pipe( 
+	 map( j => this.processFramed(j) ) ) ;
+  }
+  getCharsheet(id: string, year:number, season:string): Observable<Charsheet> {
+     const url = `${this.charsheetURI}${id}/${year}/${season}`;
      console.log( url ) ;
      return this.http.get<Charsheet>(url).pipe( 
 	 map( j => this.processFramed(j) ) ) ;

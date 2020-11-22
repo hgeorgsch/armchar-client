@@ -9,6 +9,7 @@ import {CardModule} from 'primeng/card';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {DropdownModule} from 'primeng/dropdown';
 
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -43,7 +44,8 @@ import { SeasonSelectorComponent } from './character/season-selector.component';
     SplitButtonModule,
     CardModule,
     ScrollPanelModule, 
-    DropdownModule,
+    DropdownModule, 
+    ReactiveFormsModule,
     // AppRoutingModule,
     CharsheetModule,
     AdvancementModule,

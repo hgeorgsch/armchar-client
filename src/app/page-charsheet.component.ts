@@ -30,7 +30,7 @@ export class PageCharsheetComponent implements OnInit {
   ngOnInit(): void {
      this.subs = this.route.queryParams.pipe(
          switchMap( params => { this.paramParse( params )  ;
-           return this.armcharService.getCharsheet( this.char, this.time ) 
+           return this.armcharService.getCharsheet2( this.char, this.time ) 
     }) )
 	 .subscribe( cs => { console.log(cs) ;
 	    return this.charsheet = charsheetParse( cs ) } ) 
