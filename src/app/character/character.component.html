@@ -15,17 +15,19 @@
     </div>
   </div>
   <div class="p-col-8">
+    <app-charhead [charsheet]="character"></app-charhead>
+    <app-charsheet [charsheet]="charsheet"></app-charsheet>
+  </div>
+  <div class="p-col-4">
+    <app-character-advancement [char]="character"></app-character-advancement>
+  </div>
+</div>
+
 <!--
 <p-scrollPanel [style]="{width: '100%', height: '800px'}">
 </p-scrollPanel>
 -->
-    <app-charsheet [charsheet]="charsheet"></app-charsheet>
-  </div>
-  <div class="p-col-4">
 <!--
 <p-scrollPanel [style]="{width: '100%', height: '600px'}">
 </p-scrollPanel>
 -->
-    <app-character-advancement [char]="character"></app-character-advancement>
-  </div>
-</div>

@@ -34,6 +34,7 @@ import { MundanePageModule } from './mundane-page/mundane-page.module';
   ],
   exports: [
     CharsheetComponent,
+    CharheadComponent,
   ],
 })
 export class CharsheetModule { }
