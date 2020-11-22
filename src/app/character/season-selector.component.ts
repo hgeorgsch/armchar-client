@@ -26,8 +26,8 @@ export class SeasonSelectorComponent implements OnInit {
             {name: 'Autumn', code: 'Autumn'}
         ];
     this.form = fb.group(
-	{year: 1220},
-	{season: 1220}
+	{year: new FormControl(),
+	 season: new FormControl()}
 	);
   }
 

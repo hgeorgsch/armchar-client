@@ -1,4 +1,27 @@
+<div class="p-field p-grid">
 <div class="form-group" [formGroup]="form">
-    <p-dropdown [options]="seasons" formControlName="season"></p-dropdown>
-    <input formControlName="year" placeholder="First">
+    <div class="p-col">
+    <p-dropdown optionLabel="name" [options]="seasons"
+       [showClear]="true" placeholder="Select Season"
+       optionValue="name" formControlName="season"></p-dropdown>
+    </div>
+    <div class="p-col">
+      <p-inputNumber [showButtons]="true" 
+	 buttonLayout="horizontal" spinnerMode="horizontal"
+         decrementButtonClass="p-button-danger" 
+	 incrementButtonClass="p-button-success" 
+	 incrementButtonIcon="pi pi-plus" 
+	 decrementButtonIcon="pi pi-minus" 
+	 mode="decimal" [useGrouping]="false"
+	 size="4"
+	 placeholder="1220"
+         formControlName="year" >
+      </p-inputNumber>
+
+    </div>
 </div>
+</div>
+<!--
+  <p-button label="<" icon="pi pi-plus" (click)="prevSeason()"></p-button>
+  <p-button label=">" icon="pi pi-plus" (click)="nextSeason()"></p-button>
+-->
