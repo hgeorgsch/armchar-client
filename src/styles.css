@@ -25,3 +25,18 @@ body, input[type="text"], button {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* This is necessary to hide hidden accessibility fields in primeng Dropdown menues */
+.p-hidden-accessible input { 
+   display: none ;
+}
+app-season-selector p-inputnumber {
+   vertical-align : top ;
+}
+app-season-selector p-dropdown {
+   vertical-align : bottom ;
+}
+
+.block-div {
+   display: inline-flex;
+}
