@@ -35,7 +35,8 @@ export class SeasonSelectorComponent implements OnInit {
 
   ngOnInit(): void {
      this.form.valueChanges.subscribe( val => {
-        this.timeService.setTime( { "year": val.year, "season": val.season } )
+        if ( val.year && val.season )
+        this.timeService.setTime( { "year": val.year, "season": val.season.name } )
 	} ) ;
   }
 
