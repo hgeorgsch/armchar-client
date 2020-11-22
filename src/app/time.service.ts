@@ -8,11 +8,12 @@ import { Time } from 'time';
 export class TimeService {
 
     private subject = new Subject<Time>();
+    private current : Time ;
 
     constructor() { }
 
     setTime(time: Time) {
-        this.subject.next( time );
+       this.subject.next( time );
     }
 
     getTime(): Observable<Time> {
