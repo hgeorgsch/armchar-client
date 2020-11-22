@@ -13,6 +13,8 @@ export class CharacterComponent implements OnInit {
 
   char : string = "cieran" ;
   time : string ;
+  season : string ;
+  year : number ;
   character: Character | undefined ;
   charsheet: Charsheet | undefined ;
   subs1: any ;
@@ -29,6 +31,8 @@ export class CharacterComponent implements OnInit {
      this.subs1 =  obs.pipe( switchMap( params => { 
 	   this.char = params['char'] ;
 	   this.time = params['time']  ;
+	   this.year = params['year']  ;
+	   this.season = params['season']  ;
 	   console.log( "character:", this.char, this.time ) ;
            return this.armcharService.getCharacter( this.char ) })  )
 	 .subscribe( cs => { console.log("character", cs) ;
@@ -36,6 +40,8 @@ export class CharacterComponent implements OnInit {
      this.subs2 =  obs.pipe( switchMap( params => { 
 	   this.char = params['char'] ;
 	   this.time = params['time']  ;
+	   this.year = params['year']  ;
+	   this.season = params['season']  ;
 	   console.log( "character:", this.char, this.time ) ;
            return this.armcharService.getCharsheet( this.char, this.time ) }) )
 	 .subscribe( cs => { console.log("charsheet", cs) ;

@@ -7,6 +7,8 @@ import { ButtonModule } from 'primeng/button';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import {CardModule} from 'primeng/card';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
+import {DropdownModule} from 'primeng/dropdown';
+
 
 
 
@@ -22,6 +24,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { CharacterComponent } from './character/character.component';
 import { PageCharsheetComponent } from './page-charsheet.component';
+import { SeasonSelectorComponent } from './character/season-selector.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,7 @@ import { PageCharsheetComponent } from './page-charsheet.component';
     FooterComponent,
     MessagesComponent,
     TopbarComponent, 
-    PageAdvancementsComponent, CharacterComponent, PageCharsheetComponent,
+    PageAdvancementsComponent, CharacterComponent, PageCharsheetComponent, SeasonSelectorComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { PageCharsheetComponent } from './page-charsheet.component';
     ButtonModule,
     SplitButtonModule,
     CardModule,
-    ScrollPanelModule,
+    ScrollPanelModule, 
+    DropdownModule,
     // AppRoutingModule,
     CharsheetModule,
     AdvancementModule,

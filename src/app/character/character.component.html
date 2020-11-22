@@ -2,13 +2,15 @@
   <div class="p-col-8">
     <div *ngIf="charsheet" class="header">
      {{character.name}}
+     {{charsheet.get("inYear")}}
+     {{charsheet.get("atSeason")}}
     </div>
   </div>
   <div class="p-col-4">
     <div *ngIf="charsheet" class="header">
         <p-button label="<" icon="pi pi-plus" (click)="prevSeason()"></p-button>
-     {{charsheet.get("inYear")}}
-     {{charsheet.get("atSeason")}}
+	<app-season-selector>
+	</app-season-selector>
         <p-button label=">" icon="pi pi-plus" (click)="nextSeason()"></p-button>
     </div>
   </div>
@@ -27,5 +29,3 @@
     <app-character-advancement [char]="character"></app-character-advancement>
   </div>
 </div>
-    Content
-
