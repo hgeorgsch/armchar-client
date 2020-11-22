@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Time } from 'time';
+// import { Time } from './time' ;
+
+interface Time { season: string, year: number }
 
 @Injectable({
   providedIn: 'root'

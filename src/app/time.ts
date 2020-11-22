@@ -1,2 +1,2 @@
 
-interface Time { season: string, year: number }
+export interface Time { season: string, year: number }
