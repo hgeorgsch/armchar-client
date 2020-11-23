@@ -1,4 +1,4 @@
-<div class="p-grid">
+<div *ngIf="ablist" class="p-grid">
    <div class="p-col-4">
       <p-card>
          <div style="font-size: 65%;" class="p-grid">
@@ -6,11 +6,11 @@
             <div class="p-col-3">Score</div>
             <div class="p-col-3">XP</div>
          </div>
-         <app-art [trait]="ablist['Creo']"></app-art>
-         <app-art [trait]="ablist['Intellego']"></app-art>
-         <app-art [trait]="ablist['Muto']"></app-art>
-         <app-art [trait]="ablist['Perdo']"></app-art>
-         <app-art [trait]="ablist['Rego']"></app-art>
+         <app-art [trait]="ablist.get('Creo')"></app-art>
+         <app-art [trait]="ablist.get('Intellego')"></app-art>
+         <app-art [trait]="ablist.get('Muto')"></app-art>
+         <app-art [trait]="ablist.get('Perdo')"></app-art>
+         <app-art [trait]="ablist.get('Rego')"></app-art>
       </p-card>
    </div>
    <div class="p-col-4">
@@ -20,11 +20,11 @@
            <div class="p-col-3">Score</div>
            <div class="p-col-3">XP</div>
          </div>
-         <app-art [trait]="ablist['Animal']"></app-art>
-         <app-art [trait]="ablist['Aquam']"></app-art>
-         <app-art [trait]="ablist['Auram']"></app-art>
-         <app-art [trait]="ablist['Corpus']"></app-art>
-         <app-art [trait]="ablist['Herbam']"></app-art>
+         <app-art [trait]="ablist.get('Animal')"></app-art>
+         <app-art [trait]="ablist.get('Aquam')"></app-art>
+         <app-art [trait]="ablist.get('Auram')"></app-art>
+         <app-art [trait]="ablist.get('Corpus')"></app-art>
+         <app-art [trait]="ablist.get('Herbam')"></app-art>
       </p-card>
    </div>
    <div class="p-col-4">
@@ -34,11 +34,11 @@
            <div class="p-col-3">Score</div>
            <div class="p-col-3">XP</div>
          </div>
-         <app-art [trait]="ablist['Ignem']"></app-art>
-         <app-art [trait]="ablist['Imaginem']"></app-art>
-         <app-art [trait]="ablist['Mentem']"></app-art>
-         <app-art [trait]="ablist['Terram']"></app-art>
-         <app-art [trait]="ablist['Vim']"></app-art>
+         <app-art [trait]="ablist.get('Ignem')"></app-art>
+         <app-art [trait]="ablist.get('Imaginem')"></app-art>
+         <app-art [trait]="ablist.get('Mentem')"></app-art>
+         <app-art [trait]="ablist.get('Terram')"></app-art>
+         <app-art [trait]="ablist.get('Vim')"></app-art>
       </p-card>
    </div>
 </div>

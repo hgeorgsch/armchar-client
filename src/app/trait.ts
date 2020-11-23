@@ -10,6 +10,13 @@ export class TraitList {
          this[trait.label] = trait ;
        }
    }
+   public get( k: string ) {
+     if ( k in this.traitlist ) {
+        return this.traitlist[k] ;
+     } else {
+        return null ;
+     }
+   }
    
 }
 
