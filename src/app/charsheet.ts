@@ -33,6 +33,7 @@ export function  charsheetParse( j: any ): Charsheet {
   cs.raw = j ;
   cs.charlist = parseCharList( j["arm:hasCharacteristic"] ) ;
   cs.ablist = parseAbilityList( j["arm:hasAbility"] ) ;
+  console.log( "arts",  j["arm:hasArt"] ) ;
   cs.arts = parseTraitList( j["arm:hasArt"] ) ;
   cs.spells = parseSpells( j["arm:hasSpell"] ) ;
   cs.othertraits = parseTraitList( j["arm:hasOtherTrait"] ) ;

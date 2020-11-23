@@ -9,10 +9,11 @@ export class TraitList {
        for ( let trait of r ) {
          this[trait.label] = trait ;
        }
+       console.log( "TraitList", this ) ;
    }
    public get( k: string ) {
-     if ( k in this.traitlist ) {
-        return this.traitlist[k] ;
+     if ( k in this ) {
+        return this[k] ;
      } else {
         return null ;
      }
@@ -60,6 +61,7 @@ export class Trait {
 }
 
 export function parseTraitList( l: any[] ) : TraitList {
+   console.log( l ) ;
    if ( typeof(l) === "undefined" ) return undefined ;
    if ( !l ) return undefined ;
    if ( "@id" in l ) l = [ l ] ;
