@@ -37,7 +37,8 @@ export function  charsheetParse( j: any ): Charsheet {
   cs.spells = parseSpells( j["arm:hasSpell"] ) ;
   cs.othertraits = parseTraitList( j["arm:hasOtherTrait"] ) ;
   cs.age = j["arm:hasAge"] ;
-  if ( ( typeof(cs.age) === "object" ) && ( "@value" in cs.age ) )
+  console.log( "charsheetParse", cs.age, cs ) ;
+  if ( cs.age && ( typeof(cs.age) === "object" ) && ( "@value" in cs.age ) )
      cs.age = cs.age["@value"] ;
   console.log( "charsheetParse", cs ) ;
   return cs ;
