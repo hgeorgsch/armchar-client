@@ -55,9 +55,11 @@ export class Trait {
 export function parseTraitList( l: any[] ) : TraitList {
    if ( typeof(l) === "undefined" ) return undefined ;
    if ( !l ) return undefined ;
+   if ( "@id" in l ) l = [ l ] ;
    return new TraitList( l.map( ob => new Trait(ob) ) ) ;
 }
 export function parseTraits( l: any[] ) : Trait[] {
    if ( ! l ) return [] ;
+   if ( "@id" in l ) l = [ l ] ;
    return ( l.map( ob => new Trait(ob) ) ) ;
 }
