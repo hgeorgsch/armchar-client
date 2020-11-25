@@ -1,3 +1,4 @@
+<!--
 <p-table [value]="vf" [autoLayout]="true">
    <ng-template pTemplate="header">
         <tr>
@@ -12,4 +13,13 @@
         </tr>
     </ng-template>
 </p-table>
+-->
 
+<p-accordion [multiple]="true">
+  <div *ngFor="let trait of vf">
+     <p-accordionTab 
+	  header="{{trait['arm:hasLabel']}} ({{getScore(trait)}})">
+       {{trait["hasGeneralDescription"]}}
+    </p-accordionTab>
+  </div>
+</p-accordion>

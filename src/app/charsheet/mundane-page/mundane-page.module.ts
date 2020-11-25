@@ -16,6 +16,7 @@ import { EffectTraitComponent } from './effect-trait.component';
 import { ScoreComponent } from './score.component';
 import { MundanePageComponent } from './mundane-page.component';
 import { AbilityDescriptionComponent } from './ability-description.component';
+import {AccordionModule} from 'primeng/accordion';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { AbilityDescriptionComponent } from './ability-description.component';
     TabViewModule,
     CardModule,
     SidebarModule,
+    AccordionModule,
   ],
   exports: [
     MundanePageComponent,
