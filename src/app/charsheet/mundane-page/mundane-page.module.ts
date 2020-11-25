@@ -15,6 +15,7 @@ import { VfComponent } from './vf.component';
 import { EffectTraitComponent } from './effect-trait.component';
 import { ScoreComponent } from './score.component';
 import { MundanePageComponent } from './mundane-page.component';
+import { AbilityDescriptionComponent } from './ability-description.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { MundanePageComponent } from './mundane-page.component';
     EffectTraitComponent,
     ScoreComponent,
     MundanePageComponent,
+    AbilityDescriptionComponent,
   ],
   imports: [
     CommonModule,
