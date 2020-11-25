@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Ability } from '../../ability';
 
 @Component({
-  selector: 'app-ability-description',
+  selector: 'ability-description',
   templateUrl: './ability-description.component.html',
   styleUrls: ['./ability-description.component.css']
 })
