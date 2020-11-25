@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AbilityList } from '../../ability';
+import { Ability, AbilityList } from '../../ability';
 
 @Component({
   selector: 'app-abilities',
@@ -10,9 +10,18 @@ export class AbilitiesComponent implements OnInit {
 
   @Input() ablist: AbilityList ;
 
+  details: boolean = false ;
+  ability: Ability ;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  onSelect( ability: Ability ) : void {
+     this.ability = ability ;
+     this.details = true ;
+  }
+
 
 }
