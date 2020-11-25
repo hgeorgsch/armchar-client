@@ -21,6 +21,7 @@ export class AbilitiesComponent implements OnInit {
   onSelect( ability: Ability ) : void {
      this.ability = ability ;
      this.details = true ;
+     console.log( this.details, this.ability ) ;
   }
 
 

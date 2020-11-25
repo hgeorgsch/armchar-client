@@ -13,6 +13,7 @@ export class AbilityDescriptionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+     console.log( this.ability );
   }
 
 }

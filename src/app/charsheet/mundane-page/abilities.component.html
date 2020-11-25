@@ -9,7 +9,7 @@
     </ng-template>
     <ng-template pTemplate="body" let-ab>
         <tr>
-	    <td class="clickable" (click)="onSelect(ability)">{{ab.label}}</td>
+	    <td class="clickable" (click)="onSelect(ab)">{{ab.label}}</td>
             <td>[{{ab.spec}}]</td>
             <td>{{ab.score}}</td>
             <td>{{ab.xp}}</td>
@@ -18,8 +18,6 @@
 </p-table>
 
 
-    <p-sidebar [(visible)]="details" position="right">
-       <ability-description [ability]="ability"></ability-description>
-    </p-sidebar>
-
-
+<p-sidebar [(visible)]="details" position="right">
+   <ability-description [ability]="ability"></ability-description>
+</p-sidebar>
