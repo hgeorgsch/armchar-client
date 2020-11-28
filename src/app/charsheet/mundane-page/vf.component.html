@@ -19,7 +19,7 @@
   <div *ngFor="let trait of vf">
      <p-accordionTab 
 	  header="{{trait['arm:hasLabel']}} ({{getScore(trait)}})">
-       {{trait["hasGeneralDescription"]}}
+       {{trait["arm:hasGeneralDescription"]}}
     </p-accordionTab>
   </div>
 </p-accordion>

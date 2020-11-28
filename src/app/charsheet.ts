@@ -1,6 +1,6 @@
 import { CharacteristicList, parseCharList } from './characteristic';
 import { AbilityList, parseAbilityList } from './ability';
-import { Trait, TraitList, parseTraitList } from './trait';
+import { Trait, TraitList, parseTraitList, parseTraits } from './trait';
 import { Spell, parseSpells } from './spell';
 import { parseCharacterAdvancements, CharacterAdvancement } from './advancement';
 
@@ -13,6 +13,7 @@ export class Charsheet { id: string;
   arts?: TraitList ;
   spells?: Spell[] ;
   othertraits?: TraitList ;
+  ptraits?: Trait[] ;
   constructor(id:string,n:string) {
     this.id = id ;
     this.name = n ;
@@ -36,6 +37,7 @@ export function  charsheetParse( j: any ): Charsheet {
   console.log( "arts",  j["arm:hasArt"] ) ;
   cs.arts = parseTraitList( j["arm:hasArt"] ) ;
   cs.spells = parseSpells( j["arm:hasSpell"] ) ;
+  cs.ptraits = parseTraits( j["arm:hasPersonalityTrait"] ) ;
   cs.othertraits = parseTraitList( j["arm:hasOtherTrait"] ) ;
   cs.age = j["arm:hasAge"] ;
   console.log( "charsheetParse", cs.age, cs ) ;

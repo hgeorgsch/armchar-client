@@ -33,6 +33,9 @@ export class Trait {
       this.order = ob["arm:hasOrder"] || 0 ;
       this.label = ob["arm:hasLabel"] ;
       this.score = ob["arm:hasScore"] || 0 ;
+      if ( typeof(this.score) !== "number" ) {
+         this.score = this.score["@value"]  ;
+      }
       this.xp = ob["arm:hasXP"] || 0 ;
       this.raw = ob ;
    }
@@ -56,7 +59,6 @@ export class Trait {
 	 r += p ;
       }
       return r ;
-      
    }
 }
 
