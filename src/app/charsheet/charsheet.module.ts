@@ -15,6 +15,7 @@ import {SidebarModule} from 'primeng/sidebar';
 
 import { MagicPageModule } from './magic-page/magic-page.module';
 import { MundanePageModule } from './mundane-page/mundane-page.module';
+import { EquipmentPageModule } from './equipment-page/equipment-page.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MundanePageModule } from './mundane-page/mundane-page.module';
     SidebarModule,
     MundanePageModule,
     MagicPageModule,
+    EquipmentPageModule,
   ],
   exports: [
     CharsheetComponent,
