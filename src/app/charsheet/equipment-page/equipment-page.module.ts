@@ -4,13 +4,17 @@ import { EquipmentComponent } from './equipment.component';
 import { VisComponent } from './vis.component';
 import { WeaponsComponent } from './weapons.component';
 import { OtherEquipmentComponent } from './other-equipment.component';
+import {AccordionModule} from 'primeng/accordion';
+import {PanelModule} from 'primeng/panel';
 
 
 
 @NgModule({
   declarations: [EquipmentComponent, VisComponent, WeaponsComponent, OtherEquipmentComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    PanelModule,
+    AccordionModule,
   ],
   exports: [
     EquipmentComponent,

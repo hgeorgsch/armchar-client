@@ -1,3 +1,11 @@
-<app-vis [items]="charsheet.vis"></app-vis>
-<app-weapons [items]="charsheet.weapons"></app-weapons>
-<app-other-equipment [items]="charsheet.equipment"></app-other-equipment>
+<div *ngIf="charsheet">
+<p-panel header="Vis" [toggleable]="true" class="dark-panel">
+  <app-vis [items]="charsheet.vis"></app-vis>
+</p-panel>
+<p-panel header="Weapons" [toggleable]="true" class="dark-panel">
+  <app-weapons [items]="charsheet.weapons"></app-weapons>
+</p-panel>
+<p-panel header="Other Equipment" [toggleable]="true" class="dark-panel">
+  <app-other-equipment [items]="charsheet.equipment"></app-other-equipment>
+</p-panel>
+</div>
