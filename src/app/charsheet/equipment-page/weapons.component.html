@@ -1,1 +1,10 @@
-<p>weapons works!</p>
+<div *ngIf="items">
+<p-accordion [multiple]="true">
+  <div *ngFor="let item of items">
+     <p-accordionTab 
+	  header="{{item['arm:hasPossessionLabel']}}}})">
+	<div [innerHTML]="item['arm:hasPossessionDescription']"></div>
+    </p-accordionTab>
+  </div>
+</p-accordion>
+</div>
