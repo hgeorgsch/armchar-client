@@ -8,6 +8,7 @@ import { LabPageComponent } from './lab-page.component';
   declarations: [LabPageComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [LabPageComponent],
 })
 export class LabPageModule { }

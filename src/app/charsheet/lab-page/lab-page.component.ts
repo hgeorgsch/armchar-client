@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Charsheet, charsheetParse } from '../../charsheet';
 
 @Component({
   selector: 'app-lab-page',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lab-page.component.css']
 })
 export class LabPageComponent implements OnInit {
+
+  @Input() charsheet: Charsheet ;
+  
 
   constructor() { }
 
