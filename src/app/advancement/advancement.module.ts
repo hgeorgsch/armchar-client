@@ -4,6 +4,7 @@ import { AdvancementComponent } from './advancement.component';
 import { CharacterAdvancementComponent } from './character-advancement.component';
 
 import {CardModule} from 'primeng/card';
+import { PipesModule} from '../pipes/pipes.module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import {CardModule} from 'primeng/card';
   imports: [
     CommonModule,
     CardModule,
+    PipesModule,
   ],
   exports: [
      CharacterAdvancementComponent 

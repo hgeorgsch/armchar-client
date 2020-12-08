@@ -8,8 +8,9 @@
       {{adv.description}}
       <div class="traitbox" *ngFor="let trait of adv.traits">
 	 {{trait.label}}
-	 +{{trait.raw["arm:addedXP"]}} xp -> {{trait.raw["arm:hasTotalXP"]}} 
-	 ({{trait.raw["arm:hasScore"]}})
+	 +{{trait.raw["arm:addedXP"] | score}} xp 
+	 -> {{trait.raw["arm:hasTotalXP"] | score}} 
+	 ({{trait.raw["arm:hasScore"] | score}})
       </div>
    </p-card>
 </div>

@@ -35,7 +35,10 @@ import { SeasonSelectorComponent } from './character/season-selector.component';
     FooterComponent,
     MessagesComponent,
     TopbarComponent, 
-    PageAdvancementsComponent, CharacterComponent, PageCharsheetComponent, SeasonSelectorComponent,
+    PageAdvancementsComponent,
+    CharacterComponent,
+    PageCharsheetComponent,
+    SeasonSelectorComponent,
   ],
   imports: [
     BrowserModule,
