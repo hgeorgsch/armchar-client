@@ -31,8 +31,7 @@ function parseAbility( ob ) : Ability {
    return { order: ob["arm:hasOrder"] || 0,
             label: ob["arm:hasLabel"],
             spec: ob["arm:hasSpeciality"] || "",
-            desc: ob["arm:hasGeneralDescription"] || "",
-            desc2: ob["arm:hasDescription"] || "",
+            desc: ob["arm:hasDescription"] || "",
             score: ob["arm:hasScore"] || 0,
             xp: ob["arm:hasXP"] || 0
    } as Ability ;
