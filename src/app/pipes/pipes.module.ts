@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NumberPipe } from './number.pipe';
+import { ScorePipe } from './score.pipe';
 
 @NgModule({
   declarations: [
-    NumberPipe,
+    ScorePipe,
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    NumberPipe,
+    ScorePipe,
   ]
 })
 export class PipesModule { }
