@@ -44,7 +44,7 @@ export function  charsheetParse( j: any ): Charsheet {
   cs.othertraits = parseTraitList( j["arm:hasOtherTrait"] ) ;
   cs.vis = parseTraits( j["arm:hasVis"] ) ;
   cs.equipment = parseTraits( j["arm:hasEquipment"] ) ;
-  cs.weapons = parseTraits( j["arm:hasWeapons"] ) ;
+  cs.weapons = parseTraits( j["arm:hasWeapon"] ) ;
   cs.age = j["arm:hasAge"] ;
   console.log( "charsheetParse", cs.age, cs ) ;
   if ( cs.age && ( typeof(cs.age) === "object" ) && ( "@value" in cs.age ) )
