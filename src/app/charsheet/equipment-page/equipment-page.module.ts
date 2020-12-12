@@ -6,6 +6,7 @@ import { WeaponsComponent } from './weapons.component';
 import { OtherEquipmentComponent } from './other-equipment.component';
 import {AccordionModule} from 'primeng/accordion';
 import {PanelModule} from 'primeng/panel';
+import { PipesModule} from '../../pipes/pipes.module';
 
 
 
@@ -15,6 +16,7 @@ import {PanelModule} from 'primeng/panel';
     CommonModule,
     PanelModule,
     AccordionModule,
+    PipesModule,
   ],
   exports: [
     EquipmentComponent,

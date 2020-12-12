@@ -4,7 +4,7 @@
       {{adv.season}} {{adv.year}} 
       {{adv.type}} 
       </p-header>
-      <div class="xpbox">{{adv.xp}} XP</div>
+      <div class="xpbox">{{adv.spentxp|score}}/{{adv.xp|score}} XP</div>
       {{adv.description}}
       <div class="traitbox" *ngFor="let trait of adv.traits">
 	 {{trait.label}}

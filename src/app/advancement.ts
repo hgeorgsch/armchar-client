@@ -7,6 +7,7 @@ export class CharacterAdvancement {
     description: string ;
     year: number ;
     xp?: number ;
+    spentxp?: number ;
     traits?: Trait[] ;
     raw: any ;
     constructor(ob,dict?) {
@@ -16,6 +17,8 @@ export class CharacterAdvancement {
       this.description = ob["arm:hasAdvancementDescription"] || "" ;
       if ( "arm:awardsXP" in ob ) 
          this.xp = ob["arm:awardsXP"] ;
+      if ( "arm:hasSpentXP" in ob ) 
+         this.spentxp = ob["arm:hasSpentXP"] ;
 
       let tl = ob["arm:advanceTrait"] ;
       if ( ! ( "map" in tl ) ) tl = [ tl ] ;

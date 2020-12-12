@@ -1,10 +1,9 @@
 <div *ngIf="items">
-<p>vis works!</p>
 <p-accordion [multiple]="true">
   <div *ngFor="let item of items">
      <p-accordionTab 
-	  header="{{item['arm:hasPossessionLabel']}}}})">
-	<div [innerHTML]="item['arm:hasPossessionDescription']"></div>
+	header="{{item.get('hasPossessionLabel')}} ({{item.get('hasQuantity') | score}})">
+	<div [innerHTML]="item.get('hasPossessionDescription')"></div>
     </p-accordionTab>
   </div>
 </p-accordion>
