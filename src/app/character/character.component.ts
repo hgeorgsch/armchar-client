@@ -15,13 +15,12 @@ interface Params { char: string,  year: number, season: string }
 })
 export class CharacterComponent implements OnInit {
 
-  char : string = "cieran" ;
+  char : string ;
   season : string ;
   year : number ;
-  character: Character | undefined ;
+  // character: Character | undefined ;
   charsheet: Charsheet | undefined ;
-  subs1: any ;
-  subs2: any ;
+  subs: any ;
 
   params$: Observable<Params> ;
 
@@ -52,12 +51,8 @@ export class CharacterComponent implements OnInit {
   ngOnInit(): void {
      console.log( "character starting:", this.char ) ;
      this.params$ = this.route.queryParams.pipe( 
-            switchMap( params => { return of(this.storeParams(params) ) } ) ) ;
-     this.subs1 =  this.params$.pipe( switchMap( (x) => {
-           return this.armcharService.getCharacter( this.char ) }))
-	 .subscribe( cs => { console.log("character", cs) ;
-	    this.character = characterParse( cs ) } ) ;
-     this.subs2 =  this.timeService.getTime()
+            switchMap( params => { return of(this.storeParams(params) ) } ) ) 
+     this.subs =  this.timeService.getTime()
         .pipe( switchMap( (time) => { 
          this.year = time.year ;
          this.season = time.season ;
@@ -66,9 +61,9 @@ export class CharacterComponent implements OnInit {
                           this.year, this.season ) }) )
 	 .subscribe( cs => { console.log("charsheet", cs) ;
 	    this.charsheet = charsheetParse( cs ) } ) ;
-
-      this.timeService.setTime( 
-           { "year": this.year, "season": this.season } ) ;
+     this.params$.subscribe( (x) =>
+                this.timeService.setTime( 
+                   { "year": this.year, "season": this.season } ) ) ;
   }
   prevSeason() : void {
      console.log( "prevSeason() not implemented" ) ;

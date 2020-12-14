@@ -20,7 +20,7 @@ export class Charsheet { id: string;
   constructor(id:string,n:string) {
     this.id = id ;
     this.name = n ;
-    console.log( "New charsheet", id, n ) ;
+    // console.log( "New charsheet", id, n ) ;
   }
   get(k:string) {
     if ( k in this ) 
@@ -37,7 +37,7 @@ export function  charsheetParse( j: any ): Charsheet {
   cs.raw = j ;
   cs.charlist = parseCharList( j["arm:hasCharacteristic"] ) ;
   cs.ablist = parseAbilityList( j["arm:hasAbility"] ) ;
-  console.log( "arts",  j["arm:hasArt"] ) ;
+  // console.log( "arts",  j["arm:hasArt"] ) ;
   cs.arts = parseTraitList( j["arm:hasArt"] ) ;
   cs.spells = parseSpells( j["arm:hasSpell"] ) ;
   cs.ptraits = parseTraits( j["arm:hasPersonalityTrait"] ) ;
@@ -46,10 +46,10 @@ export function  charsheetParse( j: any ): Charsheet {
   cs.equipment = parseTraits( j["arm:hasEquipment"] ) ;
   cs.weapons = parseTraits( j["arm:hasWeapon"] ) ;
   cs.age = j["arm:hasAge"] ;
-  console.log( "charsheetParse", cs.age, cs ) ;
+  // console.log( "charsheetParse", cs.age, cs ) ;
   if ( cs.age && ( typeof(cs.age) === "object" ) && ( "@value" in cs.age ) )
      cs.age = cs.age["@value"] ;
-  console.log( "charsheetParse", cs ) ;
+  // console.log( "charsheetParse", cs ) ;
   return cs ;
 }
 
@@ -75,6 +75,8 @@ export function  characterParse( j: any ): Character {
   if ( typeof(j) === "undefined" ) return undefined ;
   var cs = new Character( j["@id"], j["arm:hasName"] ) ;
   cs.raw = j ;
-  cs.adv = parseCharacterAdvancements( j["arm:hasAdvancement"], j["@dict"] ) ;
+  var advlist = j["arm:hasAdvancementList"] ;
+  // console.log( advlist ) ;
+  cs.adv = parseCharacterAdvancements( advlist["@list"], j["@dict"] ) ;
   return cs ;
 }

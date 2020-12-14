@@ -29,13 +29,8 @@ export class PageAdvancementsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     this.subs = this.route.queryParams.pipe(
-         switchMap( params => { this.paramParse( params )  ;
-           return this.armcharService.getCharacter( this.charname ) 
-    }) )
-	 .subscribe( cs => { console.log(cs) ;
-	    return this.character = characterParse( cs ) } ) 
-
+     this.subs = this.route.queryParams.subscribe(
+	  params => this.paramParse( params )  ) 
   }
 
 }

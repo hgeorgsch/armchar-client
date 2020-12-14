@@ -56,3 +56,10 @@ export function parseCharacterAdvancements( l: any[], dict: any ) : CharacterAdv
    list.sort( compare ) ;
    return list ;
 }
+export function parseCharacterAdvancementList( l: any ) : CharacterAdvancement[] {
+   if ( typeof(l) === "undefined" ) return [] ;
+   if ( "@list" in l ) l = l["@list"] ;
+   var r = l.map( ob => new CharacterAdvancement(ob) ) ;
+   console.log( "Parsed advancement list", r ) ;
+   return r ;
+}

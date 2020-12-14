@@ -1,5 +1,5 @@
-<div *ngIf="char">
-   <p-card class="advancement" *ngFor="let adv of char.adv">
+<div *ngIf="advancementlist">
+   <p-card class="advancement" *ngFor="let adv of advancementlist">
       <p-header>
       {{adv.season}} {{adv.year}} 
       {{adv.type}} 

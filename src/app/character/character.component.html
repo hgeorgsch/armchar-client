@@ -1,7 +1,7 @@
 <div class="p-grid">
   <div class="p-col-4">
     <div *ngIf="charsheet" class="header">
-     {{character.name}}
+     {{charsheet.name}}
     </div>
   </div>
   <div class="p-col-4">
@@ -19,7 +19,7 @@
     <app-charsheet [charsheet]="charsheet"></app-charsheet>
   </div>
   <div class="p-col-4">
-    <app-character-advancement [char]="character"></app-character-advancement>
+    <app-character-advancement [charname]="char"></app-character-advancement>
   </div>
 </div>
 

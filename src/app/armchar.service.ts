@@ -16,6 +16,7 @@ import { Saga } from './saga';
 export class ArmcharService {
 
   charsheetURI = 'http://localhost:8080/armchar/Character/' ;
+  advancementURI = 'http://localhost:8080/armchar/Advancement/' ;
 
   constructor(
     private http: HttpClient
@@ -31,21 +32,26 @@ export class ArmcharService {
   getCharacter(id: string): Observable<Character> {
      const url = `${this.charsheetURI}${id}`;
      const cid = `armchar:${id}`;
-     console.log( url ) ;
+     // console.log( url ) ;
      return this.http.get<Character>(url).pipe( map( j => this.process(j,cid) ) ) ;
   }
   getCharsheet2(id: string, t:string): Observable<Charsheet> {
      const url = `${this.charsheetURI}${id}/${t}`;
      const cid = `armchar:${id}#${t}`;
-     console.log( url ) ;
+     // console.log( url ) ;
      return this.http.get<Charsheet>(url).pipe( 
 	 map( j => this.processFramed(j) ) ) ;
   }
   getCharsheet(id: string, year:number, season:string): Observable<Charsheet> {
      const url = `${this.charsheetURI}${id}/${year}/${season}`;
-     console.log( url ) ;
+     // console.log( url ) ;
      return this.http.get<Charsheet>(url).pipe( 
 	 map( j => this.processFramed(j) ) ) ;
+  }
+  getAdvancements(id: string ): Observable<any> {
+     const url = `${this.advancementURI}${id}`;
+     console.log( url ) ;
+     return this.http.get<any>(url).pipe( map( j => this.processFramed(j) ) ) ;
   }
   getCharsheetPost( uri: string ): Observable<Charsheet> {
      const url = `${this.charsheetURI}`;
