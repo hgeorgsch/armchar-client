@@ -1,1 +1,8 @@
-<p>advancement works!</p>
+      <div class="xpbox">{{adv.spentxp|score}}/{{adv.xp|score}} XP</div>
+      {{adv.description}}
+      <div class="traitbox" *ngFor="let trait of adv.traits">
+	 {{trait.label}}
+	 +{{trait.raw["arm:addedXP"] | score}} xp 
+	 -> {{trait.raw["arm:hasTotalXP"] | score}} 
+	 ({{trait.raw["arm:hasScore"] | score}})
+      </div>

@@ -1,16 +1,11 @@
 <div *ngIf="advancementlist">
-   <p-card class="advancement" *ngFor="let adv of advancementlist">
-      <p-header>
-      {{adv.season}} {{adv.year}} 
-      {{adv.type}} 
-      </p-header>
-      <div class="xpbox">{{adv.spentxp|score}}/{{adv.xp|score}} XP</div>
-      {{adv.description}}
-      <div class="traitbox" *ngFor="let trait of adv.traits">
-	 {{trait.label}}
-	 +{{trait.raw["arm:addedXP"] | score}} xp 
-	 -> {{trait.raw["arm:hasTotalXP"] | score}} 
-	 ({{trait.raw["arm:hasScore"] | score}})
-      </div>
-   </p-card>
+
+<div *ngFor="let adv of advancementlist">
+   <p-panel class="advancement" 
+	    [toggleable]="true"
+	    [collapsed]="true"
+	    header="{{adv.season}} {{adv.year}} {{adv.type}}">
+      <app-advancement [adv]="adv"></app-advancement>
+   </p-panel>
+</div>
 </div>

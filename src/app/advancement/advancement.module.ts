@@ -5,13 +5,14 @@ import { CharacterAdvancementComponent } from './character-advancement.component
 
 import {CardModule} from 'primeng/card';
 import { PipesModule} from '../pipes/pipes.module';
-
+import {PanelModule} from 'primeng/panel';
 
 @NgModule({
   declarations: [AdvancementComponent, CharacterAdvancementComponent, ],
   imports: [
     CommonModule,
     CardModule,
+    PanelModule,
     PipesModule,
   ],
   exports: [

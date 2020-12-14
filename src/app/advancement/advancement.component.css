@@ -1,0 +1,10 @@
+.traitbox {
+   border: solid white ;
+   padding: 2px ;
+   margin: 2px ;
+}
+.xpbox {
+   border: solid white round ;
+   float: right ;
+   padding: 2px ;
+}

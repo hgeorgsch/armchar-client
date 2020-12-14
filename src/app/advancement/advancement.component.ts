@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CharacterAdvancement } from '../advancement';
 
 @Component({
   selector: 'app-advancement',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./advancement.component.css']
 })
 export class AdvancementComponent implements OnInit {
+
+  @Input() adv : CharacterAdvancement ;
 
   constructor() { }
 
