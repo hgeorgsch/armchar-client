@@ -1,6 +1,9 @@
 # ArmcharClient
 
-This client is made to work with the [armchar server](https://github.com/hgeorgsch/armchar).
+This client is made to work with the
+[armchar server](https://github.com/hgeorgsch/armchar).
+
+## Quick Start
 
 # Development notes - inherited from Angular
 
