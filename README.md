@@ -5,6 +5,13 @@ This client is made to work with the
 
 ## Quick Start
 
+A fairly old version of angular and primeng is used. 
+It may be necessary to force installation, i.e. use
+
+```sh
+npm i --force
+```
+
 # Development notes - inherited from Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
