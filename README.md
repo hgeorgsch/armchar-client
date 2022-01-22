@@ -12,6 +12,20 @@ It may be necessary to force installation, i.e. use
 npm i --force
 ```
 
+When the 
+[armchar server](https://github.com/hgeorgsch/armchar).
+is running on localhost port 8080, as well as the client server
+on port 4200 (as with the angular development server),
+you can try, for instance,
+
+```
+http://localhost:4200/character?char=cieran&year=1222&season=Summer
+```
+
+This loads the sample character, Cieran the Fletcher.
+
+The pages to select character have not been implemented.
+
 # Development notes - inherited from Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
